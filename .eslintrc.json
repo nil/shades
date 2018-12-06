@@ -1,0 +1,21 @@
+{
+  "root": true,
+  "env": {
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "plugin:vue/essential",
+    "airbnb-base"
+  ],
+  "rules": {
+    "func-names": 0,
+    "prefer-destructuring": 0,
+    "comma-dangle": ["error", "never"],
+    "no-param-reassign": ["error", { "props": false }],
+    "no-restricted-syntax": [0, "BinaryExpression[operator='in']"]
+  },
+  "parserOptions": {
+    "parser": "babel-eslint"
+  }
+}

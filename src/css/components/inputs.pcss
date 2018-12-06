@@ -1,0 +1,100 @@
+/* -- General ------ */
+input {
+  font: inherit;
+  cursor: inherit;
+}
+
+/* -- Color ------ */
+.color-input {
+  &--info {
+    display: flex;
+    margin-top: $size--input-margin;
+  }
+
+  &--name {
+    flex: 1;
+  }
+
+  &--dropdown {
+    position: relative;
+    padding-bottom: $size--dropdown-padding-b;
+
+    &::before {
+      display: inline-block;
+      position: absolute;
+      top: $size--dropdown-top;
+      right: $size--dropdown-right;
+
+      width: $size--dropdown-size;
+      height: $size--dropdown-size;
+
+	    border: solid $color--dropdown-border;
+      border-width: $size--dropdown-border $size--dropdown-border 0 0;
+
+      transform: rotate($transform--dropdown-rotate);
+
+    	content: '';
+    }
+
+    select {
+      appearance: none;
+      padding: 0 $size--dropdown-padding-r 0 $size--dropdown-padding-l;
+
+      color: $color--dropdown-text;
+      background: $color--dropdown-bg;
+
+      font-size: $type--dropdown-font-size;
+    }
+
+    option {
+      color: black;
+    }
+
+  }
+
+  &--picker {
+    display: flex;
+  }
+
+  &--preview {
+    width: $size--preview-width;
+    min-height: $size--preview-height;
+    border: $size--preview-border solid $color--preview-border;
+  }
+
+  &--field {
+    @add-mixin input;
+    @add-mixin mono;
+    display: flex;
+    flex: 1;
+    border-left: 0;
+  }
+
+  &--hex {
+    padding: $size--input-padding;
+  }
+
+  &--number {
+    display: flex;
+    flex: 1;
+
+    &:not(:last-child) {
+      border-right: $size--input-border solid $color--input-border;
+    }
+  }
+
+  &--label {
+    width: $size--label-width-s;
+    padding: $size--input-padding + 1px $size--input-padding / 2 $size--input-padding;
+
+    color: $color--label-text;
+
+    font-size: $type--label-font-size;
+    text-align: right;
+  }
+
+  &--input {
+    width: $size--label-width-l;
+    padding: $size--input-padding;
+  }
+}
