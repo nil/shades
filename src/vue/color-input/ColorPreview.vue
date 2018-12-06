@@ -13,7 +13,7 @@ export default {
   },
   computed: {
     backgroundColor() {
-      return store.getters.getColor(this.id);
+      return store.getters.hex(this.id);
     }
   }
 };

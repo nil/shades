@@ -25,8 +25,12 @@ export default new Vuex.Store({
         ui: false
       },
       to: {
-        format: 'hex',
-        value: '#FFFFFF',
+        format: 'hsv',
+        value: {
+          h: 100,
+          s: 5,
+          v: 80
+        },
         ui: true
       }
     }
@@ -43,6 +47,7 @@ export default new Vuex.Store({
     }
   },
   getters: {
-    getColor: state => id => color(state.colors[id].value).hex()
+    hex: state => id => color(state.colors[id].value).hex(),
+    color: state => id => state.colors[id].value
   }
 });
