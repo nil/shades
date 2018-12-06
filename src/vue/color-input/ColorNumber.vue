@@ -41,7 +41,7 @@ export default {
   },
   computed: {
     colorValue() {
-      return store.getters.color(this.id)[this.label];
+      return store.state.colors[this.id].value[this.label];
     },
     getId() {
       return `input-${Math.floor(Math.random() * 65535).toString(16)}`;
