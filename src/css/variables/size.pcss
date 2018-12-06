@@ -1,32 +1,35 @@
+:root {
+
 /* -- Spaces ------ */
-$space--u: 1px;
-$space--b: 8px;
-$space--xs: 10px;
-$space--s: 16px;
-$space--m: 24px;
-$space--l: 40px;
+--space_u: 1px;
+--space_b: 8px;
+--space_xs: 10px;
+--space_s: 16px;
+--space_m: 24px;
+--space_l: 40px;
 
 /* -- Input ------ */
-$size--input-padding: $space--xs $space--s;
-$size--input-margin: $space--m;
-$size--input-border: $space--u;
+--s_input--padding: var(--space_xs) var(--space_s);
+--s_input--margin: var(--space_m);
+--s_input--border: var(--space_u);
 
-/* -- Label ------ */
-$size--label-width-s: 30%;
-$size--label-width-l: 100% - $size--label-width-s;
+--s_input-label--width: 30%;
+--s_input-field--width: 100% - var(--s_input-label--width);
 
 /* -- Preview ------ */
-$size--preview-height: 100%;
-$size--preview-width: $space--l + $space--b;
-$size--preview-border: $space--u;
+--s_preview--height: 100%;
+--s_preview--width: var(--space_l) + var(--space_b);
+--s_preview--border: var(--space_u);
 
 /* -- Dropdown ------ */
-$size--dropdown-top: 0.37em;
-$size--dropdown-right: 0.15em;
+--s_dropdown--top: 0.37em;
+--s_dropdown--right: 0.15em;
 
-$size--dropdown-padding-b: $space--b / 2;
-$size--dropdown-padding-r: $space--s;
-$size--dropdown-padding-l: $space--l;
+--s_dropdown--padding-b: var(--space_b) / 2;
+--s_dropdown--padding-r: var(--space_s);
+--s_dropdown--padding-l: var(--space_l);
 
-$size--dropdown-size: 0.35em;
-$size--dropdown-border: $space--u;
+--s_dropdown--size: 0.35em;
+--s_dropdown--border: var(--space_u);
+
+}

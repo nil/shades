@@ -19,3 +19,26 @@ yarn run build
 ```
 yarn run lint
 ```
+
+## Information for myself
+
+### Structure for the CSS variable
+
+```css
+var(--[category]_[element]--[property])
+```
+
+Examples:
+
+```css
+var(--t_base--font-family)
+var(--s_input-preview--border-width)
+var(--c_base--background)
+```
+
+| Category   | Letter   |
+|------------|----------|
+| Typography | `t`      |
+| Color      | `c`      |
+| Size       | `s`      |
+| Other      | `o`      |

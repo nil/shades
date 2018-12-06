@@ -8,7 +8,7 @@ input {
 .color-input {
   &--info {
     display: flex;
-    margin-top: $size--input-margin;
+    margin-top: var(--s_input--margin);
   }
 
   &--name {
@@ -17,33 +17,33 @@ input {
 
   &--dropdown {
     position: relative;
-    padding-bottom: $size--dropdown-padding-b;
+    padding-bottom: var(--s_dropdown--padding-b);
 
     &::before {
       display: inline-block;
       position: absolute;
-      top: $size--dropdown-top;
-      right: $size--dropdown-right;
+      top: var(--s_dropdown--top);
+      right: var(--s_dropdown--right);
 
-      width: $size--dropdown-size;
-      height: $size--dropdown-size;
+      width: var(--s_dropdown--size);
+      height: var(--s_dropdown--size);
 
-	    border: solid $color--dropdown-border;
-      border-width: $size--dropdown-border $size--dropdown-border 0 0;
+	    border: solid var(--s_dropdown--border);
+      border-width: var(--s_dropdown--border) var(--s_dropdown--border) 0 0;
 
-      transform: rotate($transform--dropdown-rotate);
+      transform: rotate(var(--o_dropdown--rotate));
 
     	content: '';
     }
 
     select {
       appearance: none;
-      padding: 0 $size--dropdown-padding-r 0 $size--dropdown-padding-l;
+      padding: 0 var(--s_dropdown--padding-r) 0 var(--s_dropdown--padding-l);
 
-      color: $color--dropdown-text;
-      background: $color--dropdown-bg;
+      color: var(--c_dropdown--text);
+      background: var(--c_dropdown--bg);
 
-      font-size: $type--dropdown-font-size;
+      font-size: var(--t_dropdown--font-size);
     }
 
     option {
@@ -57,9 +57,9 @@ input {
   }
 
   &--preview {
-    width: $size--preview-width;
-    min-height: $size--preview-height;
-    border: $size--preview-border solid $color--preview-border;
+    width: var(--s_preview--width);
+    min-height: var(--s_preview--height);
+    border: var(--s_preview--border) solid var(--c_preview--border);
   }
 
   &--field {
@@ -71,7 +71,7 @@ input {
   }
 
   &--hex {
-    padding: $size--input-padding;
+    padding: var(--s_input--padding);
   }
 
   &--number {
@@ -79,23 +79,23 @@ input {
     flex: 1;
 
     &:not(:last-child) {
-      border-right: $size--input-border solid $color--input-border;
+      border-right: var(--s_input--border) solid var(--c_input--border);
     }
   }
 
   &--label {
-    width: $size--label-width-s;
-    padding: $space--xs + 1px 0 $space--xs $space--s;
-    color: $color--label-text;
+    width: var(--s_input-label--width);
+    padding: var(--space_xs) + 1px 0 var(--space_xs) var(--space_s);
+    color: var(--c_label--text);
 
-    font-size: $type--label-font-size;
+    font-size: var(--t_label--font-size);
   }
 
   &--input {
-    width: $size--label-width-l;
-    padding: $space--xs $space--s $space--xs 0;
+    width: var(--s_input-field--width);
+    padding: var(--space_xs) var(--space_s) var(--space_xs) 0;
 
-    text-align: $type--label-text-align;
+    text-align: var(--t_label--text-align);
   }
 }
 
