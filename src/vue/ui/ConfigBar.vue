@@ -2,8 +2,8 @@
   <section>
 
     <!-- <InputRange min="2" max="10" :val="steps" v-model="steps" /> {{ steps }} -->
-    <InputColor id="from" />
-    <InputColor id="to" />
+    <InputColor label="From" />
+    <InputColor label="To" />
 
   </section>
 </template>

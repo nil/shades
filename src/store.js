@@ -18,31 +18,19 @@ export default new Vuex.Store({
         v: 100
       }
     },
-    colors: {
-      from: {
-        format: 'hex',
-        value: '#112233',
-        ui: false
-      },
-      to: {
-        format: 'hex',
-        value: '#FFFFFF',
-        ui: true
-      }
-    }
+    colorFormat: 'hex',
+    fromColor: '#112233',
+    toColor: '#FFFFFF'
   },
   mutations: {
     numberUpdate(state, { id, label, value }) {
-      state.colors[id].value[label] = value;
+      state[id][label] = value;
     },
     updateColor(state, { value, id }) {
-      state.colors[id].value = value;
-    },
-    updateFormat(state, { value, id }) {
-      state.colors[id].format = value;
+      state[id] = value;
     }
   },
   getters: {
-    getColor: state => id => color(state.colors[id].value).hex()
+    getColor: state => id => color(state[id]).hex()
   }
 });
