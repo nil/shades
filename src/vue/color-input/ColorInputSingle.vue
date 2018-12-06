@@ -33,7 +33,7 @@ export default {
   },
   computed: {
     colorValue() {
-      return store.state[this.id];
+      return store.state.colors[this.id].value;
     }
   }
 };

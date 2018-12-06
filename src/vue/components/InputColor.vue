@@ -1,7 +1,9 @@
 <template>
   <div class="color-input">
     <div class="color-input--info">
-      <span class="color-input--name">{{ label }}</span>
+      <span class="color-input--name">
+        {{ this.id.charAt(0).toUpperCase() + this.id.slice(1) }}
+      </span>
       <div class="color-input--dropdown">
         <select v-model="colorFormat" @input="formatUpdate($event.target.value)">
           <option value="hex">HEX</option>
@@ -11,24 +13,24 @@
       </div>
     </div>
     <div class="color-input--picker">
-      <ColorPreview :id="colorId" />
+      <ColorPreview :id="id" />
 
       <!-- Hex -->
       <ColorInputSingle
         v-if="colorFormat === 'hex'"
-        :id="colorId" />
+        :id="id" />
 
       <!-- RGB -->
       <ColorInputMultiple
         v-if="colorFormat === 'rgb'"
         :format="'rgb'"
-        :id="colorId" />
+        :id="id" />
 
       <!-- HSB -->
       <ColorInputMultiple
         v-if="colorFormat === 'hsv'"
         :format="'hsv'"
-        :id="colorId" />
+        :id="id" />
     </div>
   </div>
 </template>
@@ -50,16 +52,11 @@ export default {
     ColorInputMultiple
   },
   props: {
-    label: String
-  },
-  data() {
-    return {
-      colorFormat: 'hex'
-    };
+    id: String
   },
   methods: {
     formatUpdate(newFormat) {
-      let newColor = color(store.state[this.colorId])[newFormat]();
+      let newColor = color(store.state.colors[this.id].value)[newFormat]();
 
       if (newFormat !== 'hex') {
         newColor = newColor.round().object();
@@ -67,13 +64,21 @@ export default {
 
       store.commit('updateColor', {
         value: newColor,
-        id: this.colorId
+        id: this.id
       });
     }
   },
   computed: {
-    colorId() {
-      return `${this.label.toLowerCase()}Color`;
+    colorFormat: {
+      get() {
+        return store.state.colors[this.id].format;
+      },
+      set(newFormat) {
+        store.commit('updateFormat', {
+          value: newFormat,
+          id: this.id
+        });
+      }
     }
   }
 };
