@@ -85,7 +85,7 @@ input {
 
   &--label {
     width: $size--label-width-s;
-    padding: $size--input-padding + 1px $size--input-padding / 2 $size--input-padding;
+    padding: $size--input-padding + 1px $size--input-padding / 4 $size--input-padding;
 
     color: $color--label-text;
 
@@ -95,6 +95,8 @@ input {
 
   &--input {
     width: $size--label-width-l;
-    padding: $size--input-padding;
+    padding: $size--input-padding $size--input-padding * 2 $size--input-padding $size--input-padding;
+
+    text-align: $type--label-text-align;
   }
 }
