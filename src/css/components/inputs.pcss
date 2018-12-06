@@ -85,12 +85,10 @@ input {
 
   &--label {
     width: $size--label-width-s;
-    padding: $size--input-padding + 1px $size--input-padding / 4 $size--input-padding;
-
+    padding: $size--input-padding + 1px 0 $size--input-padding $size--input-padding * 2;
     color: $color--label-text;
 
     font-size: $type--label-font-size;
-    text-align: right;
   }
 
   &--input {
@@ -99,4 +97,10 @@ input {
 
     text-align: $type--label-text-align;
   }
+}
+
+
+body {
+  width: 280px;
+  margin: 50px auto;
 }
