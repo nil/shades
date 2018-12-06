@@ -44,7 +44,21 @@ export default new Vuex.Store({
     },
     updateFormat(state, { value, id }) {
       state.colors[id].format = value;
+    },
+    toggleColorPicker(state, { target, id }) {
+      if (target.classList.contains('color-input--preview')) {
+        state.colors[id].ui = !state.colors[id].ui;
+      } else {
+        for (const item in state.colors) {
+          if (Object.prototype.hasOwnProperty.call(state.colors, item)) {
+            if (state.colors[item].ui) {
+              state.colors[item].ui = false;
+            }
+          }
+        }
+      }
     }
+
   },
   getters: {
     hex: state => id => color(state.colors[id].value).hex(),

@@ -1,5 +1,7 @@
 <template>
-  <div class="color-input--preview" :style="{ background: backgroundColor }" />
+  <div class="color-input--preview"
+    :style="{ background: backgroundColor }"
+    @click="toggleColorPicker($event)" />
 </template>
 
 <script>
@@ -14,6 +16,14 @@ export default {
   computed: {
     backgroundColor() {
       return store.getters.hex(this.id);
+    }
+  },
+  methods: {
+    toggleColorPicker(e) {
+      store.commit('toggleColorPicker', {
+        target: e.target,
+        id: this.id
+      });
     }
   }
 };
