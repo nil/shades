@@ -17,9 +17,6 @@ input {
 
   &--dropdown {
     position: relative;
-    padding-bottom: var(--s_dropdown--padding-b);
-
-    cursor: pointer;
 
     &::before {
       display: inline-block;
@@ -39,13 +36,14 @@ input {
     }
 
     select {
-      appearance: none;
-      padding: 0 var(--s_dropdown--padding-r) 0 var(--s_dropdown--padding-l);
+      padding: var(--s_dropdown--padding);
 
       color: var(--c_dropdown--text);
       background: var(--c_dropdown--bg);
 
       font-size: var(--t_dropdown--font-size);
+
+      cursor: pointer;
     }
 
     option {
