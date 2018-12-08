@@ -3,7 +3,9 @@
     <div class="color-input--info">
       <span class="color-input--name">{{ label }}</span>
       <div class="color-input--dropdown">
-        <select v-model="colorFormat" @input="formatUpdate($event.target.value)">
+        <select tabindex="-1"
+          v-model="colorFormat"
+          @input="formatUpdate($event.target.value)">
           <option value="hex">HEX</option>
           <option value="rgb">RGB</option>
           <option value="hsv">HSB</option>
