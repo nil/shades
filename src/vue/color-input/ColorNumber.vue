@@ -1,6 +1,8 @@
 <template>
   <div class="color-input--number">
-    <label :for="getId" class="color-input--label">
+    <label class="color-input--label"
+      :for="getId"
+      @mousedown="mouseDownUpdate($event)">
       {{ labelLetter }}
     </label>
     <input type="text" class="color-input--input"
@@ -18,6 +20,9 @@
 
 import store from '../../store';
 import numFormatter from '../../js/utils/numFormatter';
+
+let initialMousePosition = 0;
+let initialColorValue = 0;
 
 export default {
   name: 'InputColorNumber',
@@ -46,6 +51,21 @@ export default {
       const val = this.colorValue + (e.key === 'ArrowDown' ? -diff : diff);
 
       this.writeUpdate(undefined, val);
+    },
+    mouseDownUpdate(e) {
+      initialMousePosition = e.pageX;
+      initialColorValue = this.colorValue;
+
+      document.addEventListener('mousemove', this.mouseMoveUpdate);
+      document.addEventListener('mouseup', this.mouseUpUpdate);
+    },
+    mouseMoveUpdate(e) {
+      const val = initialColorValue + (e.pageX - initialMousePosition) / 2;
+
+      this.writeUpdate(undefined, val);
+    },
+    mouseUpUpdate() {
+      document.removeEventListener('mousemove', this.mouseMoveUpdate);
     }
   },
   computed: {
