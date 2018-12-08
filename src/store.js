@@ -23,7 +23,7 @@ export default new Vuex.Store({
     toColor: '#FFFFFF'
   },
   mutations: {
-    numberUpdate(state, { id, label, value }) {
+    updateNumber(state, { id, label, value }) {
       state[id][label] = value;
     },
     updateColor(state, { value, id }) {

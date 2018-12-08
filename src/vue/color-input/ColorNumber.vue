@@ -32,7 +32,7 @@ export default {
       const val = numFormatter(chosenValue, this.max);
 
       if (val || val === 0) {
-        store.commit('numberUpdate', {
+        store.commit('updateNumber', {
           id: this.id,
           label: this.label,
           value: val
