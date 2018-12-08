@@ -1,9 +1,13 @@
 <template>
-  <section>
+  <section class="config-bar" role="main">
 
     <!-- <InputRange min="2" max="10" :val="steps" v-model="steps" /> {{ steps }} -->
-    <InputColor label="From" />
-    <InputColor label="To" />
+
+    <div>
+      <h1>Colors</h1>
+      <InputColor label="From" />
+      <InputColor label="To" />
+    </div>
 
   </section>
 </template>
