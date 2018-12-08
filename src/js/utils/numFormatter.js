@@ -19,9 +19,9 @@ module.exports = function (val, maximum = 99999) {
       return 0;
     }
 
-    // Greater than maximum - return false
-    if (number > max) {
-      return false;
+    // Greater than maximum - return max
+    if (number >= max) {
+      return max;
     }
 
     // Else - return number without decimals

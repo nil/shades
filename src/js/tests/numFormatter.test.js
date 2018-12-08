@@ -23,7 +23,7 @@ describe('numFormatter', () => {
     expect(numFormatter('12.7')).toBe(13);
   });
   test('Negative number', () => {
-    expect(numFormatter('-20')).toBeFalsy();
+    expect(numFormatter('-20')).toBe(0);
   });
   test('Letter', () => {
     expect(numFormatter('a')).toBeFalsy();
@@ -35,13 +35,13 @@ describe('numFormatter', () => {
     expect(numFormatter('200', '200')).toBe(200);
   });
   test('Greater than maximum value', () => {
-    expect(numFormatter('222', '200')).toBeFalsy();
+    expect(numFormatter('222', '200')).toBe(200);
   });
   test('Math operation', () => {
     expect(numFormatter('-1+3')).toBe(2);
   });
   test('Math operation with negative result', () => {
-    expect(numFormatter('-1-3')).toBeFalsy();
+    expect(numFormatter('-1-3')).toBe(0);
   });
   test('Complex math operation', () => {
     expect(numFormatter('1+2/2+6*8-20')).toBe(30);
