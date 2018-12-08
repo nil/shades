@@ -7,8 +7,10 @@
       :id="getId"
       :value="colorValue"
       ref="input"
-      @blur="numUpdate($event)"
-      @keypress.enter="numUpdate($event)" />
+      @blur="writeUpdate($event)"
+      @keypress.enter="writeUpdate($event)"
+      @keypress.up="arrowUpdate($event)"
+      @keypress.down="arrowUpdate($event)" />
   </div>
 </template>
 
@@ -25,8 +27,9 @@ export default {
     id: String
   },
   methods: {
-    numUpdate(e) {
-      const val = numFormatter(e.target.value, this.max);
+    writeUpdate(e, value) {
+      const chosenValue = e ? e.target.value : value;
+      const val = numFormatter(chosenValue, this.max);
 
       if (val || val === 0) {
         store.commit('numberUpdate', {
@@ -37,6 +40,12 @@ export default {
       } else {
         this.$refs.input.value = this.colorValue;
       }
+    },
+    arrowUpdate(e) {
+      const diff = 1 + e.shiftKey * 9;
+      const val = this.colorValue + (e.key === 'ArrowDown' ? -diff : diff);
+
+      this.writeUpdate(undefined, val);
     }
   },
   computed: {
