@@ -60,7 +60,7 @@ export default {
       document.addEventListener('mouseup', this.mouseUpUpdate);
     },
     mouseMoveUpdate(e) {
-      const val = initialColorValue + (e.pageX - initialMousePosition) / 2;
+      const val = initialColorValue + e.pageX - initialMousePosition;
 
       this.writeUpdate(undefined, val);
     },
