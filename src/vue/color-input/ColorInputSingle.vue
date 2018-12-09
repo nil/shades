@@ -1,5 +1,6 @@
 <template>
   <input type="text" class="color-input--field color-input--hex"
+    v-if="selectedFormat === format"
     :value="colorValue"
     ref="input"
     @blur="writeUpdate($event)"
@@ -17,6 +18,7 @@ import store from '../../store';
 export default {
   name: 'ColorInputSingle',
   props: {
+    format: String,
     id: String
   },
   methods: {
@@ -49,6 +51,9 @@ export default {
   computed: {
     colorValue() {
       return store.state.color[this.id].value;
+    },
+    selectedFormat() {
+      return store.state.color[this.id].format;
     }
   }
 };

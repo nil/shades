@@ -1,5 +1,6 @@
 <template>
-  <div class="color-input--field">
+  <div class="color-input--field"
+    v-if="selectedFormat === format">
     <ColorNumber
       v-for="(value, channel) in formatObject"
       :key="channel"
@@ -26,6 +27,9 @@ export default {
   computed: {
     formatObject() {
       return store.state.format[this.format];
+    },
+    selectedFormat() {
+      return store.state.color[this.id].format;
     }
   }
 };

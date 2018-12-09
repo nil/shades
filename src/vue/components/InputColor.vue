@@ -17,18 +17,16 @@
 
       <!-- Hex -->
       <ColorInputSingle
-        v-if="colorFormat === 'hex'"
+        :format="'hex'"
         :id="colorId" />
 
       <!-- RGB -->
       <ColorInputMultiple
-        v-if="colorFormat === 'rgb'"
         :format="'rgb'"
         :id="colorId" />
 
       <!-- HSB -->
       <ColorInputMultiple
-        v-if="colorFormat === 'hsv'"
         :format="'hsv'"
         :id="colorId" />
     </div>
