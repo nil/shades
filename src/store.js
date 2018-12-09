@@ -36,6 +36,7 @@ export default new Vuex.Store({
       }
     }
   },
+
   mutations: {
     updateNumber(state, { id, label, value }) {
       state.color[id].value[label] = value;
@@ -47,7 +48,9 @@ export default new Vuex.Store({
       state.color[id].format = value;
     }
   },
+
   getters: {
-    getColor: state => id => color(state.color[id].value).hex()
+    color: state => id => state.color[id].value,
+    hex: state => id => color(state.color[id].value).hex()
   }
 });
