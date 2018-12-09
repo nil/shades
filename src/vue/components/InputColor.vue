@@ -54,14 +54,9 @@ export default {
   props: {
     label: String
   },
-  data() {
-    return {
-      colorFormat: 'hex'
-    };
-  },
   methods: {
     formatUpdate(newFormat) {
-      let newColor = color(store.state[this.colorId])[newFormat]();
+      let newColor = color(store.state.colors[this.colorId].value)[newFormat]();
 
       if (newFormat !== 'hex') {
         newColor = newColor.round().object();
@@ -75,7 +70,18 @@ export default {
   },
   computed: {
     colorId() {
-      return `${this.label.toLowerCase()}Color`;
+      return this.label.toLowerCase();
+    },
+    colorFormat: {
+      get() {
+        return store.state.colors[this.colorId].format;
+      },
+      set(value) {
+        store.commit('updateFormat', {
+          id: this.colorId,
+          value
+        });
+      }
     }
   }
 };
