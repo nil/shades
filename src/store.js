@@ -6,6 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    // Maximum value of each channel
     format: {
       rgb: {
         r: 255,
@@ -18,7 +19,9 @@ export default new Vuex.Store({
         v: 100
       }
     },
-    colors: {
+
+    // Default values of each color
+    color: {
       from: {
         format: 'hex',
         value: '#112233'
@@ -35,16 +38,16 @@ export default new Vuex.Store({
   },
   mutations: {
     updateNumber(state, { id, label, value }) {
-      state.colors[id].value[label] = value;
+      state.color[id].value[label] = value;
     },
     updateColor(state, { value, id }) {
-      state.colors[id].value = value;
+      state.color[id].value = value;
     },
     updateFormat(state, { id, value }) {
-      state.colors[id].format = value;
+      state.color[id].format = value;
     }
   },
   getters: {
-    getColor: state => id => color(state.colors[id].value).hex()
+    getColor: state => id => color(state.color[id].value).hex()
   }
 });

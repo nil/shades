@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     formatUpdate(newFormat) {
-      let newColor = color(store.state.colors[this.colorId].value)[newFormat]();
+      let newColor = color(store.state.color[this.colorId].value)[newFormat]();
 
       if (newFormat !== 'hex') {
         newColor = newColor.round().object();
@@ -74,7 +74,7 @@ export default {
     },
     colorFormat: {
       get() {
-        return store.state.colors[this.colorId].format;
+        return store.state.color[this.colorId].format;
       },
       set(value) {
         store.commit('updateFormat', {
