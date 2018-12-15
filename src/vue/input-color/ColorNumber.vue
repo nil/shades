@@ -1,11 +1,11 @@
 <template>
-  <div class="color-input--number">
-    <label class="color-input--label"
+  <div class="input-color--number">
+    <label class="input-color--label"
       :for="getId"
       @mousedown="mouseDownUpdate($event)">
       {{ labelLetter }}
     </label>
-    <input type="text" class="color-input--input"
+    <input type="text" class="input-color--input"
       :id="getId"
       :value="colorValue"
       ref="input"

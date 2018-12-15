@@ -1,5 +1,5 @@
 <template>
-  <div class="color-input--preview" :style="{ background: backgroundColor }" />
+  <div class="input-color--preview" :style="{ background: backgroundColor }" />
 </template>
 
 <script>

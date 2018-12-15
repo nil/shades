@@ -1,5 +1,5 @@
 <template>
-  <input type="text" class="color-input--field color-input--hex"
+  <input type="text" class="input-color--field input-color--hex"
     v-if="selectedFormat === format"
     :value="colorValue"
     ref="input"

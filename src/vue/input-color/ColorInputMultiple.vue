@@ -1,5 +1,5 @@
 <template>
-  <div class="color-input--field"
+  <div class="input-color--field"
     v-if="selectedFormat === format">
     <ColorNumber
       v-for="(value, channel) in formatObject"

@@ -1,8 +1,8 @@
 <template>
-  <div class="color-input">
-    <div class="color-input--info">
-      <span class="color-input--name">{{ label }}</span>
-      <div class="color-input--dropdown">
+  <div class="input-color">
+    <div class="input-color--info">
+      <span class="input-color--name">{{ label }}</span>
+      <div class="input-color--dropdown">
         <select tabindex="-1"
           v-model="colorFormat"
           @input="formatUpdate($event.target.value)">
@@ -12,7 +12,7 @@
         </select>
       </div>
     </div>
-    <div class="color-input--picker">
+    <div class="input-color--picker">
       <ColorPreview :id="colorId" />
 
       <!-- Hex -->
