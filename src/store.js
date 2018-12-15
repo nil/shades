@@ -20,37 +20,36 @@ export default new Vuex.Store({
       }
     },
 
-    // Default values of each color
-    color: {
-      from: {
-        format: 'hex',
-        value: '#112233'
-      },
-      to: {
-        format: 'hex',
-        value: '#445566'
-      },
-      main: {
-        format: 'hex',
-        value: '#778899'
-      }
+    // Current values for every color
+    from: {
+      format: 'hex',
+      color: '#112233'
+    },
+
+    to: {
+      format: 'hex',
+      color: '#445566'
+    },
+
+    main: {
+      format: 'hex',
+      color: '#778899'
     }
   },
 
   mutations: {
     updateNumber(state, { id, label, value }) {
-      state.color[id].value[label] = value;
+      state[id].color[label] = value;
     },
     updateColor(state, { value, id }) {
-      state.color[id].value = value;
+      state[id].color = value;
     },
     updateFormat(state, { id, value }) {
-      state.color[id].format = value;
+      state[id].format = value;
     }
   },
 
   getters: {
-    color: state => id => state.color[id].value,
-    hex: state => id => color(state.color[id].value).hex()
+    hex: state => id => color(state[id].color).hex()
   }
 });

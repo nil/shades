@@ -50,10 +50,10 @@ export default {
   },
   computed: {
     colorValue() {
-      return store.getters.color(this.id);
+      return store.state[this.id].color;
     },
     selectedFormat() {
-      return store.state.color[this.id].format;
+      return store.state[this.id].format;
     }
   }
 };

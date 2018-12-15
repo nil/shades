@@ -29,7 +29,7 @@ export default {
       return store.state.format[this.format];
     },
     selectedFormat() {
-      return store.state.color[this.id].format;
+      return store.state[this.id].format;
     }
   }
 };
