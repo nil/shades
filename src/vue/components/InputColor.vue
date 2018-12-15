@@ -38,9 +38,9 @@
 import color from 'color';
 import store from '../../store';
 
-import ColorPreview from '../color-input/ColorPreview.vue';
-import ColorInputSingle from '../color-input/ColorInputSingle.vue';
-import ColorInputMultiple from '../color-input/ColorInputMultiple.vue';
+import ColorPreview from '../input-color/ColorPreview.vue';
+import ColorInputSingle from '../input-color/ColorInputSingle.vue';
+import ColorInputMultiple from '../input-color/ColorInputMultiple.vue';
 
 export default {
   name: 'InputColor',
