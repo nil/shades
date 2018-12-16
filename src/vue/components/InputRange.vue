@@ -1,28 +1,39 @@
 <template>
   <div class="hello">
-    <input type="range"
-      :min="min"
-      :max="max"
-      :value="val"
-      step="1"
-      @input="updateValue($event.target.value)" />
+    {{ label }}
+    <range-slider
+      class="slider"
+      min="10"
+      max="100"
+      step="10"
+      v-model="sliderValue">
+    </range-slider>
+    {{ sliderValue }}
   </div>
 </template>
 
 <script>
 
+// import RangeSlider from 'vue-range-slider';
+import RangeSlider from '../input-range/RangeSlider.vue';
+
 export default {
   name: 'InputRange',
-  props: {
-    min: String,
-    max: String,
-    val: Number
+  components: {
+    RangeSlider
   },
-  methods: {
-    updateValue(val) {
-      this.$emit('input', val);
-    }
+  props: {
+    label: String
+  },
+  data() {
+    return {
+      sliderValue: 20
+    };
   }
 };
 
 </script>
+
+<style>
+
+</style>
