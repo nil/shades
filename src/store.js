@@ -32,8 +32,10 @@ export default new Vuex.Store({
     },
 
     main: {
+      active: true,
       format: 'hex',
-      color: '#778899'
+      color: '#778899',
+      position: 5
     }
   },
 
@@ -46,6 +48,9 @@ export default new Vuex.Store({
     },
     updateFormat(state, { id, value }) {
       state[id].format = value;
+    },
+    updateSwitch(state, id) {
+      state[id].active = !state[id].active;
     }
   },
 

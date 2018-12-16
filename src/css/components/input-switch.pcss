@@ -1,0 +1,103 @@
+/**
+ * Based on https://scottaohara.github.io/a11y_styled_form_controls/src/checkbox--switch/
+ */
+
+.input-switch {
+	display: flex;
+	position: relative;
+
+	margin: 1em 0;
+
+	&--label {
+		flex: 1;
+	}
+
+	&--toggle {
+		position: relative;
+		top: var(--s_switch--top);
+
+		width: var(--s_switch-toggle--width);
+		height: var(--s_switch--size);
+
+		cursor: pointer;
+
+		&:before,
+		&:after {
+			position: absolute;
+			top: 50%;
+
+			transform: translateY(-50%);
+
+			content: "";
+			z-index: -1;
+		}
+
+		&:after { /* Box */
+			right: var(--s_switch--size);
+
+			width: var(--s_switch--size);
+			height: var(--s_switch--size);
+
+			background: var(--c_switch--fill);
+			border: var(--s_switch--border) solid var(--c_switch--border);
+
+			@add-mixin transition;
+		}
+
+		&:before { /* Background */
+			width: 100%;
+			height: var(--s_switch-toggle--height);
+
+			background: var(--c_switch--bg);
+		}
+	}
+
+	&--on,
+	&--off {
+		position: absolute;
+
+		width: var(--s_switch--size);
+		height: var(--s_switch--size);
+
+		fill: none;
+		stroke: var(--c_switch--icon);
+		stroke-width: var(--s_switch--icon);
+
+		@add-mixin transition;
+	}
+
+	&--on {
+		right: var(--s_switch--border);
+		transform: scale(0);
+	}
+
+	&--off {
+		right: var(--s_switch--size) + var(--s_switch--border);
+		transform: scale(1);
+	}
+
+	&--checkbox {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		width: 100%;
+		height: 100%;
+
+		opacity: 0.0001;
+
+		&:checked + .input-switch--toggle {
+			&:after {
+				right: 0;
+			}
+
+			& .input-switch--on {
+				transform: scale(1);
+			}
+
+			& .input-switch--off {
+				transform: scale(0);
+			}
+		}
+	}
+}

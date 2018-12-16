@@ -1,12 +1,12 @@
 <template>
   <section class="config-bar" role="main">
-
-    <!-- <InputRange min="2" max="10" :val="steps" v-model="steps" /> {{ steps }} -->
-
     <div>
       <h1>Colors</h1>
+
       <InputColor label="From" />
       <InputColor label="To" />
+
+      <InputSwitch label="Main color" id="main" />
     </div>
 
   </section>
@@ -16,6 +16,7 @@
 
 import InputRange from '../components/InputRange.vue';
 import InputColor from '../components/InputColor.vue';
+import InputSwitch from '../components/InputSwitch.vue';
 
 export default {
   name: 'ConfigBar',
@@ -24,7 +25,8 @@ export default {
   },
   components: {
     InputRange,
-    InputColor
+    InputColor,
+    InputSwitch
   },
   data() {
     return {
