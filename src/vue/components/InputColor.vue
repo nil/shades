@@ -13,22 +13,22 @@
       </div>
     </div>
     <div class="input-color--picker">
-      <ColorPreview :id="colorId" />
+      <ColorPreview :id="id" />
 
       <!-- Hex -->
       <ColorInputSingle
         :format="'hex'"
-        :id="colorId" />
+        :id="id" />
 
       <!-- RGB -->
       <ColorInputMultiple
         :format="'rgb'"
-        :id="colorId" />
+        :id="id" />
 
       <!-- HSB -->
       <ColorInputMultiple
         :format="'hsv'"
-        :id="colorId" />
+        :id="id" />
     </div>
   </div>
 </template>
@@ -50,11 +50,12 @@ export default {
     ColorInputMultiple
   },
   props: {
-    label: String
+    label: String,
+    id: String
   },
   methods: {
     formatUpdate(newFormat) {
-      let newColor = color(store.state[this.colorId].color)[newFormat]();
+      let newColor = color(store.state[this.id].color)[newFormat]();
 
       if (newFormat !== 'hex') {
         newColor = newColor.round().object();
@@ -62,21 +63,18 @@ export default {
 
       store.commit('updateColor', {
         value: newColor,
-        id: this.colorId
+        id: this.id
       });
     }
   },
   computed: {
-    colorId() {
-      return this.label.toLowerCase();
-    },
     colorFormat: {
       get() {
-        return store.state[this.colorId].format;
+        return store.state[this.id].format;
       },
       set(value) {
         store.commit('updateFormat', {
-          id: this.colorId,
+          id: this.id,
           value
         });
       }

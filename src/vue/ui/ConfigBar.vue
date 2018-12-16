@@ -3,8 +3,8 @@
     <div>
       <h1>Colors</h1>
 
-      <InputColor label="From" />
-      <InputColor label="To" />
+      <InputColor label="From" id="from" />
+      <InputColor label="To" id="to" />
 
       <InputSwitch label="Main color" id="main" />
     </div>
