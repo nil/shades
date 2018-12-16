@@ -11,3 +11,20 @@ body {
   width: 288px;
   margin: 70px auto;
 }
+
+.config-bar {
+  &--main {
+    max-height: 0;
+
+    overflow: hidden;
+
+    @add-mixin transition;
+
+    &.active {
+      max-height: 400px;
+
+      @add-mixin transition-inverse;
+    }
+
+  }
+}

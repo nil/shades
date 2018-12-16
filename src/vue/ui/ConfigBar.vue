@@ -8,7 +8,7 @@
 
       <InputSwitch label="Main color" id="main" />
 
-      <div v-if="isMainActive">
+      <div class="config-bar--main" :class="{ active: isMainActive }">
         <InputRange label="Position" id="main" />
         <InputColor label="Color" id="main" />
       </div>
