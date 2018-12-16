@@ -24,7 +24,7 @@
 import store from '../../store';
 
 export default {
-  name: 'InputColor',
+  name: 'InputSwitch',
   props: {
     label: String,
     id: String
