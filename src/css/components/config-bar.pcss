@@ -1,18 +1,14 @@
-/* .config-bar {
-  width: 336px;
-  height: 100vh;
-  padding: var(--space_m);
-
-  background-color: var(--c_gray-10);
-} */
-
-body {
-  background: var(--c_gray-10);
-  width: 288px;
-  margin: 70px auto;
-}
-
 .config-bar {
+  position: relative;
+  margin: 0 auto;
+
+  width: 336px;
+  min-height: 100vh;
+
+  background: var(--c_gray-10);
+
+  z-index: 1;
+
   &--main {
     max-height: 0;
 
