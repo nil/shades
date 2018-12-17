@@ -6,10 +6,9 @@ module.exports = {
     require('postcss-nested'),
     require('postcss-mixins'),
     require('postcss-css-variables'),
-    require('math-calc'),
+    require('postcss-calc'),
     require('autoprefixer'),
     require('css-mqpacker'),
-    require('cssnano'),
     require('cssnano')
   ]
 };

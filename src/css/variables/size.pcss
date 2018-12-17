@@ -15,7 +15,10 @@
 --s_input--border: var(--space_u);
 
 --s_input-label--width: 30%;
---s_input-field--width: 100% - var(--s_input-label--width);
+--s_input-label--padding: calc(var(--space_xs) + 1px) 0 var(--space_xs) var(--space_s);
+
+--s_input-field--width: calc(100% - var(--s_input-label--width));
+--s_input-field--padding: var(--space_xs) var(--space_s) var(--space_xs) 0;
 
 /* -- Preview ------ */
 --s_preview--height: 100%;
@@ -26,10 +29,17 @@
 --s_dropdown--top: 48%;
 --s_dropdown--right: 0;
 
---s_dropdown--padding: 0 var(--space_s) var(--space_b) / 2 var(--space_l);
+--s_dropdown--padding: 0 var(--space_s) calc(var(--space_b) / 2) var(--space_l);
 
 --s_dropdown--size: 0.35em;
 --s_dropdown--border: var(--space_u);
+
+/* -- Range ------ */
+--s_range-rail--margin: var(--space_s) 0;
+--s_range-rail--height: var(--space_b);
+
+--s_range-handle--size: var(--space_m);
+--s_range-handle--border: var(--s_input--border);
 
 /* -- Switch ------ */
 --s_switch--top: -2px;
@@ -37,7 +47,7 @@
 --s_switch--border: var(--s_input--border);
 --s_switch--icon: 2px;
 
---s_switch-toggle--width: var(--s_switch--size) * 2;
+--s_switch-toggle--width: calc(var(--s_switch--size) * 2);
 --s_switch-toggle--height: var(--space_s);
 
 }

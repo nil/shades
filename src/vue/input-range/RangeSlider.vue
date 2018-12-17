@@ -1,24 +1,23 @@
 <!-- Based on https://github.com/ktsn/vue-range-slider -->
 
 <template>
-  <span class="input-range--slider">
-    <drag-helper
-      @dragstart="dragStart"
-      @drag="drag"
-      @dragend="dragEnd">
-      <span ref="inner" class="input-range--inner">
-        <input class="input-range--hidden"
-          type="text"
-          :name="name"
-          :value="actualValue">
-        <span class="input-range--rail"></span>
-        <span class="input-range--fill" :style="{ width: valuePercent + '%' }"></span>
-        <span class="input-range--knob" ref="knob" :style="{ left: valuePercent + '%' }">
-          <slot name="knob"></slot>
-        </span>
-      </span>
-    </drag-helper>
-  </span>
+  <drag-helper
+    @dragstart="dragStart"
+    @drag="drag"
+    @dragend="dragEnd">
+    <div ref="slider" class="input-range--slider">
+      <input class="input-range--hidden"
+        type="text"
+        :name="name"
+        :value="actualValue">
+      <div class="input-range--progress" :style="{ width: valuePercent + '%' }"></div>
+      <div class="input-range--drag">
+        <div class="input-range--handle" ref="handle" :style="{ left: valuePercent + '%' }">
+        <slot name="handle"></slot>
+        </div>
+      </div>
+    </div>
+  </drag-helper>
 </template>
 
 <script>
@@ -96,21 +95,21 @@ export default {
   methods: {
     dragStart(event, offset) {
       this.dragStartValue = this.actualValue;
-      if (event.target === this.$refs.knob) {
+      if (event.target === this.$refs.handle) {
         return;
       }
-      // If the click is out of knob, move it to mouse position
+      // If the click is out of handle, move it to mouse position
       this.drag(event, offset);
     },
 
     drag(event, offset) {
-      const { offsetWidth } = this.$refs.inner;
+      const { offsetWidth } = this.$refs.slider;
       this.actualValue = this.round(this.valueFromBounds(offset, offsetWidth));
       this.emitInput(this.actualValue);
     },
 
     dragEnd(event, offset) {
-      const { offsetWidth } = this.$refs.inner;
+      const { offsetWidth } = this.$refs.slider;
       this.actualValue = this.round(this.valueFromBounds(offset, offsetWidth));
 
       if (this.dragStartValue !== this.actualValue) {

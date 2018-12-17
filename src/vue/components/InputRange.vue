@@ -1,14 +1,15 @@
 <template>
-  <div class="hello">
-    {{ label }}
+  <div class="input-range">
+    <div class="input-range--info">
+      <div class="input-range--name">{{ label }}</div>
+      <div class="input-range--value">{{ value }}</div>
+    </div>
     <range-slider
-      class="slider"
       min="10"
       max="100"
       step="10"
       v-model="value">
     </range-slider>
-    {{ value }}
   </div>
 </template>
 
