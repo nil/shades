@@ -5,9 +5,6 @@ export default {
   mixins: [
     DocumentEventHelper
   ],
-  props: {
-    disabled: Boolean
-  },
   data() {
     return {
       isDrag: false
@@ -56,8 +53,7 @@ export default {
       return relativeMouseOffset(touch, this.$el);
     },
     dragStart(event, f) {
-      if (this.disabled
-        || (event.button !== undefined && event.button !== 0)
+      if ((event.button !== undefined && event.button !== 0)
         || !this.isInTarget(event.target)) {
         return;
       }

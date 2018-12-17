@@ -1,23 +1,19 @@
-.range-slider {
+.input-range--slider {
   display: inline-block;
   padding: 0 10px;
   height: 20px;
   width: 130px;
 }
 
-.range-slider.disabled {
-  opacity: 0.5;
-}
-
-.range-slider-inner {
+.input-range--inner {
   display: inline-block;
   position: relative;
   height: 100%;
   width: 100%;
 }
 
-.range-slider-rail,
-.range-slider-fill {
+.input-range--rail,
+.input-range--fill {
   display: block;
   position: absolute;
   top: 50%;
@@ -27,16 +23,16 @@
   transform: translateY(-50%);
 }
 
-.range-slider-rail {
+.input-range--rail {
   width: 100%;
   background-color: #e2e2e2;
 }
 
-.range-slider-fill {
+.input-range--fill {
   background-color: #21fb92;
 }
 
-.range-slider-knob {
+.input-range--knob {
   display: block;
   position: absolute;
   top: 50%;
@@ -52,6 +48,6 @@
   cursor: pointer;
 }
 
-.range-slider-hidden {
+.input-range--hidden {
   display: none;
 }

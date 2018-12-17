@@ -1,19 +1,19 @@
 <!-- Based on https://github.com/ktsn/vue-range-slider -->
 
 <template>
-  <span class="range-slider">
+  <span class="input-range--slider">
     <drag-helper
       @dragstart="dragStart"
       @drag="drag"
       @dragend="dragEnd">
-      <span ref="inner" class="range-slider-inner">
-        <input class="range-slider-hidden"
+      <span ref="inner" class="input-range--inner">
+        <input class="input-range--hidden"
           type="text"
           :name="name"
           :value="actualValue">
-        <span class="range-slider-rail"></span>
-        <span class="range-slider-fill" :style="{ width: valuePercent + '%' }"></span>
-        <span class="range-slider-knob" ref="knob" :style="{ left: valuePercent + '%' }">
+        <span class="input-range--rail"></span>
+        <span class="input-range--fill" :style="{ width: valuePercent + '%' }"></span>
+        <span class="input-range--knob" ref="knob" :style="{ left: valuePercent + '%' }">
           <slot name="knob"></slot>
         </span>
       </span>
@@ -105,13 +105,13 @@ export default {
 
     drag(event, offset) {
       const { offsetWidth } = this.$refs.inner;
-      this.actualValue = this.round(this.valueFromBounds(offset.left, offsetWidth));
+      this.actualValue = this.round(this.valueFromBounds(offset, offsetWidth));
       this.emitInput(this.actualValue);
     },
 
     dragEnd(event, offset) {
       const { offsetWidth } = this.$refs.inner;
-      this.actualValue = this.round(this.valueFromBounds(offset.left, offsetWidth));
+      this.actualValue = this.round(this.valueFromBounds(offset, offsetWidth));
 
       if (this.dragStartValue !== this.actualValue) {
         this.emitChange(this.actualValue);
