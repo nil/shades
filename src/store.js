@@ -35,7 +35,7 @@ export default new Vuex.Store({
       active: true,
       format: 'hex',
       color: '#778899',
-      position: 5
+      index: 30
     }
   },
 
@@ -51,6 +51,9 @@ export default new Vuex.Store({
     },
     updateSwitch(state, id) {
       state[id].active = !state[id].active;
+    },
+    updateRange(state, { value, id }) {
+      state[id].index = value;
     }
   },
 

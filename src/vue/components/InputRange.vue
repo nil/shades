@@ -6,15 +6,16 @@
       min="10"
       max="100"
       step="10"
-      v-model="sliderValue">
+      v-model="value">
     </range-slider>
-    {{ sliderValue }}
+    {{ value }}
   </div>
 </template>
 
 <script>
 
-// import RangeSlider from 'vue-range-slider';
+import store from '../../store';
+
 import RangeSlider from '../input-range/RangeSlider.vue';
 
 export default {
@@ -23,17 +24,24 @@ export default {
     RangeSlider
   },
   props: {
-    label: String
+    label: String,
+    id: String
   },
-  data() {
-    return {
-      sliderValue: 20
-    };
+  computed: {
+    value: {
+      get() {
+        return store.state[this.id].index;
+      },
+      set(value) {
+        if (value !== this.value) {
+          store.commit('updateRange', {
+            id: this.id,
+            value
+          });
+        }
+      }
+    }
   }
 };
 
 </script>
-
-<style>
-
-</style>
