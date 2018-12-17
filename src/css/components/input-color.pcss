@@ -92,5 +92,12 @@
     padding: var(--s_input-field--padding);
 
     text-align: var(--t_input-label--text-align);
+
+    appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
   }
 }
