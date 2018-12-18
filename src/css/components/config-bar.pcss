@@ -11,6 +11,7 @@
 
   &--main {
     max-height: 0;
+    padding-bottom: var(--space_m);
 
     overflow: hidden;
 
@@ -21,6 +22,44 @@
 
       @add-mixin transition-inverse;
     }
+  }
 
+  &--border {
+    position: relative;
+
+    padding-bottom: var(--s_section-arrow--padding);
+
+    &::before,
+    &::after {
+      display: block;
+      position: absolute;
+
+      content: '';
+    }
+
+    &::before { /* Arrow */
+      top: var(--s_section-arrow--size);
+      left: var(--s_section-arrow--left);
+
+      width: var(--s_section-arrow--size);
+      height: var(--s_section-arrow--size);
+
+      background-color: var(--c_section-arrow--bg);
+	    border: solid var(--c_section-arrow--border);
+      border-width: var(--s_section-arrow--border);
+
+      transform: rotate(var(--o_section-arrow--rotate));
+      transform-origin: top right;
+
+      z-index: 1;
+    }
+
+    &::after { /* Line */
+      top: var(--s_section-border--top);
+      width: 100%;
+      height: var(--s_section-border--height);
+
+      background-color: var(--c_section-arrow--border);
+    }
   }
 }

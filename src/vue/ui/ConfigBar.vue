@@ -1,19 +1,17 @@
 <template>
   <section class="config-bar" role="main">
-    <div>
-      <h1>Colors</h1>
+    <h1>Colors</h1>
 
-      <InputColor label="From" id="from" />
-      <InputColor label="To" id="to" />
+    <InputColor label="From" id="from" />
+    <InputColor label="To" id="to" />
 
-      <InputSwitch label="Main color" id="main" />
+    <InputSwitch label="Main color" id="main" />
 
-      <div class="config-bar--main" :class="{ active: isMainActive }">
-        <InputRange label="Position" id="main" />
-        <InputColor label="Color" id="main" />
-      </div>
+    <div class="config-bar--main" :class="{ active: isMainActive }">
+      <div class="config-bar--border"></div>
+      <InputRange label="Position" id="main" />
+      <InputColor label="Color" id="main" />
     </div>
-
   </section>
 </template>
 
