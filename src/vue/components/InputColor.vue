@@ -1,7 +1,7 @@
 <template>
   <div class="input-color">
     <div class="input-color--info">
-      <span class="input-color--name">{{ label }}</span>
+      <span class="input-color--label">{{ label }}</span>
       <div class="input-color--dropdown">
         <select tabindex="-1"
           v-model="colorFormat"

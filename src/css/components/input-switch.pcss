@@ -38,8 +38,8 @@
 			width: var(--s_switch--size);
 			height: var(--s_switch--size);
 
-			background: var(--c_switch--fill);
-			border: var(--s_switch--border) solid var(--c_switch--border);
+			background: var(--c_input--bg);
+			border: var(--s_switch--border) solid var(--c_input--border);
 
 			@add-mixin transition;
 		}
@@ -48,7 +48,7 @@
 			width: 100%;
 			height: var(--s_switch-toggle--height);
 
-			background: var(--c_switch--bg);
+			background: var(--c_input--fill);
 		}
 	}
 
@@ -60,7 +60,7 @@
 		height: var(--s_switch--size);
 
 		fill: none;
-		stroke: var(--c_switch--icon);
+		stroke: var(--c_input--text);
 		stroke-width: var(--s_switch--icon);
 
 		@add-mixin transition;

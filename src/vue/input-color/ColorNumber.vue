@@ -1,6 +1,6 @@
 <template>
   <div class="input-color--number">
-    <label class="input-color--label"
+    <label class="input-color--letter"
       :for="getId"
       @mousedown="mouseDownUpdate($event)">
       {{ labelLetter }}

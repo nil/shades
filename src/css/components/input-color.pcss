@@ -5,7 +5,7 @@
     display: flex;
   }
 
-  &--name {
+  &--label {
     flex: 1;
   }
 
@@ -33,8 +33,8 @@
     select {
       padding: var(--s_dropdown--padding);
 
-      color: var(--c_dropdown--text);
-      background: var(--c_dropdown--bg);
+      color: var(--c_input--label);
+      background: none;
 
       font-size: var(--t_dropdown--font-size);
 
@@ -54,7 +54,7 @@
   &--preview {
     width: var(--s_preview--width);
     min-height: var(--s_preview--height);
-    border: var(--s_preview--border) solid var(--c_preview--border);
+    border: var(--s_preview--border) solid rgba(0, 0, 0, 0.15);
   }
 
   &--field {
@@ -78,10 +78,10 @@
     }
   }
 
-  &--label {
+  &--letter {
     width: var(--s_input-label--width);
     padding: var(--s_input-label--padding);
-    color: var(--c_input-label--text);
+    color: var(--c_input--letter);
 
     font-size: var(--t_input-label--font-size);
     user-select: none;

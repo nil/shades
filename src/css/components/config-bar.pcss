@@ -1,3 +1,7 @@
+:root {
+  --c_config-bar--bg: var(--gray-10);
+}
+
 .config-bar {
   position: relative;
   margin: 0 auto;
@@ -5,7 +9,7 @@
   width: 336px;
   min-height: 100vh;
 
-  background: var(--c_gray-10);
+  background: var(--c_config-bar--bg);
 
   z-index: 1;
 
@@ -44,8 +48,8 @@
       width: var(--s_section-arrow--size);
       height: var(--s_section-arrow--size);
 
-      background-color: var(--c_section-arrow--bg);
-	    border: solid var(--c_section-arrow--border);
+      background-color: var(--c_config-bar--bg);
+	    border: solid var(--c_input--border);
       border-width: var(--s_section-arrow--border);
 
       transform: rotate(var(--o_section-arrow--rotate));
@@ -59,7 +63,7 @@
       width: 100%;
       height: var(--s_section-border--height);
 
-      background-color: var(--c_section-arrow--border);
+      background-color: var(--c_input--border);
     }
   }
 }
