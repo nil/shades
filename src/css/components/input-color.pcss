@@ -1,3 +1,8 @@
+:root {
+  --dropdown-size: 0.35em;
+  --letter-width: 30%;
+}
+
 .input-color {
   margin: var(--s_input--margin);
 
@@ -15,28 +20,28 @@
     &::before {
       display: inline-block;
       position: absolute;
-      top: var(--s_dropdown--top);
-      right: var(--s_dropdown--right);
+      top: 48%;
+      right: 0;
 
-      width: var(--s_dropdown--size);
-      height: var(--s_dropdown--size);
+      width: var(--dropdown-size);
+      height: var(--dropdown-size);
 
-	    border: solid var(--s_dropdown--border);
-      border-width: var(--s_dropdown--border) var(--s_dropdown--border) 0 0;
+	    border: solid var(--s_input--border);
+      border-width: var(--s_input--border) var(--s_input--border) 0 0;
 
-      transform: rotate(var(--o_dropdown--rotate));
+      transform: rotate(135deg);
       transform-origin: center top;
 
     	content: '';
     }
 
     select {
-      padding: var(--s_dropdown--padding);
+      padding: 0 var(--space_s) calc(var(--space_b) / 2) var(--space_l);
 
       color: var(--c_input--label);
       background: none;
 
-      font-size: var(--t_dropdown--font-size);
+      font-size: 13px;
 
       cursor: pointer;
     }
@@ -52,9 +57,10 @@
   }
 
   &--preview {
-    width: var(--s_preview--width);
-    min-height: var(--s_preview--height);
-    border: var(--s_preview--border) solid rgba(0, 0, 0, 0.15);
+    width: var(--space_xl);
+    min-height: 100%;
+
+    border: var(--s_input--border) solid rgba(0, 0, 0, 0.15);
   }
 
   &--field {
@@ -66,7 +72,7 @@
   }
 
   &--hex {
-    padding: var(--s_input--padding);
+    padding: var(--space_xs) var(--space_s);
   }
 
   &--number {
@@ -79,8 +85,8 @@
   }
 
   &--letter {
-    width: var(--s_input-label--width);
-    padding: var(--s_input-label--padding);
+    width: var(--letter-width);
+    padding: calc(var(--space_xs) + 1px) 0 var(--space_xs) var(--space_s);
     color: var(--c_input--letter);
 
     font-size: var(--t_input-label--font-size);
@@ -88,10 +94,10 @@
   }
 
   &--input {
-    width: var(--s_input-field--width);
-    padding: var(--s_input-field--padding);
+    width: calc(100% - var(--letter-width));
+    padding: var(--space_xs) var(--space_s) var(--space_xs) 0;
 
-    text-align: var(--t_input-label--text-align);
+    text-align: right;
 
     appearance: textfield;
 

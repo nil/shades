@@ -1,5 +1,6 @@
 :root {
-  --c_config-bar--bg: var(--gray-10);
+  --bar-bg: var(--gray-10);
+  --arrow-size: 0.74em;
 }
 
 .config-bar {
@@ -9,7 +10,7 @@
   width: 336px;
   min-height: 100vh;
 
-  background: var(--c_config-bar--bg);
+  background: var(--bar-bg);
 
   z-index: 1;
 
@@ -31,7 +32,7 @@
   &--border {
     position: relative;
 
-    padding-bottom: var(--s_section-arrow--padding);
+    padding-bottom: var(--space_m);
 
     &::before,
     &::after {
@@ -42,26 +43,26 @@
     }
 
     &::before { /* Arrow */
-      top: var(--s_section-arrow--size);
-      left: var(--s_section-arrow--left);
+      top: var(--arrow-size);
+      left: var(--space_m);
 
-      width: var(--s_section-arrow--size);
-      height: var(--s_section-arrow--size);
+      width: var(--arrow-size);
+      height: var(--arrow-size);
 
-      background-color: var(--c_config-bar--bg);
+      background-color: var(--bar-bg);
 	    border: solid var(--c_input--border);
-      border-width: var(--s_section-arrow--border);
+      border-width: var(--s_input--border) var(--s_input--border) 0 0;
 
-      transform: rotate(var(--o_section-arrow--rotate));
+      transform: rotate(315deg);
       transform-origin: top right;
 
       z-index: 1;
     }
 
     &::after { /* Line */
-      top: var(--s_section-border--top);
+      top: 1.31em;
       width: 100%;
-      height: var(--s_section-border--height);
+      height: var(--s_input--border);
 
       background-color: var(--c_input--border);
     }

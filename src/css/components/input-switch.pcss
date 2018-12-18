@@ -2,6 +2,10 @@
  * Based on https://scottaohara.github.io/a11y_styled_form_controls/src/checkbox--switch/
  */
 
+:root {
+	--switch-size: var(--space_m);
+}
+
 .input-switch {
 	display: flex;
 	position: relative;
@@ -14,10 +18,10 @@
 
 	&--toggle {
 		position: relative;
-		top: var(--s_switch--top);
+		top: -2px;
 
-		width: var(--s_switch-toggle--width);
-		height: var(--s_switch--size);
+		width: calc(var(--switch-size) * 2);
+		height: var(--switch-size);
 
 		cursor: pointer;
 
@@ -33,20 +37,20 @@
 		}
 
 		&:after { /* Box */
-			right: var(--s_switch--size);
+			right: var(--switch-size);
 
-			width: var(--s_switch--size);
-			height: var(--s_switch--size);
+			width: var(--switch-size);
+			height: var(--switch-size);
 
 			background: var(--c_input--bg);
-			border: var(--s_switch--border) solid var(--c_input--border);
+			border: var(--s_input--border) solid var(--c_input--border);
 
 			@add-mixin transition;
 		}
 
 		&:before { /* Background */
 			width: 100%;
-			height: var(--s_switch-toggle--height);
+			height: var(--space_s);
 
 			background: var(--c_input--fill);
 		}
@@ -56,23 +60,23 @@
 	&--off {
 		position: absolute;
 
-		width: var(--s_switch--size);
-		height: var(--s_switch--size);
+		width: var(--switch-size);
+		height: var(--switch-size);
 
 		fill: none;
 		stroke: var(--c_input--text);
-		stroke-width: var(--s_switch--icon);
+		stroke-width: 2px;
 
 		@add-mixin transition;
 	}
 
 	&--on {
-		right: var(--s_switch--border);
+		right: var(--s_input--border);
 		transform: scale(0);
 	}
 
 	&--off {
-		right: calc(var(--s_switch--size) + var(--s_switch--border));
+		right: calc(var(--switch-size) + var(--s_input--border));
 		transform: scale(1);
 	}
 

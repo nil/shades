@@ -1,3 +1,7 @@
+:root {
+  --handle-size: var(--space_m);
+}
+
 .input-range {
   margin: var(--s_input--margin);
 
@@ -15,8 +19,8 @@
 
   &--slider {
     position: relative;
-    margin: var(--s_range-rail--margin);
-    height: var(--s_range-rail--height);
+    margin: var(--space_s) 0;
+    height: var(--space_b);
     background: var(--c_input--fill);
   }
 
@@ -35,9 +39,9 @@
   }
 
   &--drag {
-    width: calc(100% - var(--s_range-handle--size));
+    width: calc(100% - var(--handle-size));
     height: 100%;
-    transform: translateX(calc(var(--s_range-handle--size) / 2))
+    transform: translateX(calc(var(--handle-size) / 2))
   }
 
   &--handle {
@@ -45,10 +49,10 @@
     top: 50%;
     left: 0;
 
-    width: var(--s_range-handle--size);
-    height: var(--s_range-handle--size);
+    width: var(--handle-size);
+    height: var(--handle-size);
 
-    border: var(--s_range-handle--border) solid var(--c_input--border);
+    border: var(--s_input--border) solid var(--c_input--border);
     background-color: var(--c_input--bg);
 
     transform: translate(-50%, -50%);
