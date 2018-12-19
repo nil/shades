@@ -1,5 +1,4 @@
 :root {
-  --dropdown-size: 0.35em;
   --letter-width: 30%;
 }
 
@@ -8,6 +7,7 @@
 
   &--info {
     display: flex;
+    height: var(--space_m);
   }
 
   &--label {
@@ -15,36 +15,18 @@
   }
 
   &--dropdown {
-    position: relative;
+    padding: 0 var(--space_s) calc(var(--space_b) / 2) var(--space_l);
 
-    &::before {
-      display: inline-block;
-      position: absolute;
-      top: 48%;
-      right: 0;
+    color: var(--c_input--label);
+    background-color: transparent;
+    background-image: url('../assets/icons/dropdown-arrow.svg');
+    background-position: center right;
+    background-size: var(--space_s);
+    background-repeat: no-repeat;
 
-      width: var(--dropdown-size);
-      height: var(--dropdown-size);
+    font-size: 13px;
 
-	    border: solid var(--s_input--border);
-      border-width: var(--s_input--border) var(--s_input--border) 0 0;
-
-      transform: rotate(135deg);
-      transform-origin: center top;
-
-    	content: '';
-    }
-
-    select {
-      padding: 0 var(--space_s) calc(var(--space_b) / 2) var(--space_l);
-
-      color: var(--c_input--label);
-      background: none;
-
-      font-size: 13px;
-
-      cursor: pointer;
-    }
+    cursor: pointer;
 
     option {
       color: black;

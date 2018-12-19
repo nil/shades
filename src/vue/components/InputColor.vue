@@ -2,15 +2,13 @@
   <div class="input-color">
     <div class="input-color--info">
       <span class="input-color--label">{{ label }}</span>
-      <div class="input-color--dropdown">
-        <select tabindex="-1"
-          v-model="colorFormat"
-          @input="formatUpdate($event.target.value)">
-          <option value="hex">HEX</option>
-          <option value="rgb">RGB</option>
-          <option value="hsv">HSB</option>
-        </select>
-      </div>
+      <select tabindex="-1" class="input-color--dropdown"
+        v-model="colorFormat"
+        @input="formatUpdate($event.target.value)">
+        <option value="hex">HEX</option>
+        <option value="rgb">RGB</option>
+        <option value="hsv">HSB</option>
+      </select>
     </div>
     <div class="input-color--picker">
       <ColorPreview :id="id" />
