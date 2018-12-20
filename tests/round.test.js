@@ -1,4 +1,4 @@
-const round = require('../utils/round.js');
+import round from '../src/js/round';
 
 describe('Round', () => {
   test('Min, max', () => {

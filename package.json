@@ -11,25 +11,30 @@
     "color": "^3.1.0",
     "hex-format": "^2.2.1",
     "string-math": "^1.2.1",
-    "vue": "^2.5.17",
+    "vue": "^2.5.21",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.2.3",
     "@vue/cli-plugin-babel": "^3.0.5",
     "@vue/cli-plugin-eslint": "^3.0.5",
     "@vue/cli-service": "^3.0.5",
+    "@vue/test-utils": "^1.0.0-beta.27",
     "autoprefixer": "^9.1.5",
+    "babel-core": "^7.0.0-0",
+    "babel-jest": "^23.6.0",
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.7",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "jest": "^23.6.0",
     "postcss-calc": "^7.0.1",
     "postcss-css-variables": "^0.11.0",
     "postcss-import": "^12.0.0",
     "postcss-mixins": "^6.2.0",
     "postcss-nested": "^4.1.0",
-    "vue-template-compiler": "^2.5.17"
+    "vue-jest": "^3.0.2",
+    "vue-template-compiler": "^2.5.21",
+    "vue-test-utils": "^1.0.0-beta.11"
   },
   "browserslist": [
     "> 1%",
