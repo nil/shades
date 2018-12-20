@@ -1,4 +1,4 @@
-const numFormatter = require('../utils/numFormatter.js');
+import numFormatter from '../utils/numFormatter';
 
 describe('numFormatter', () => {
   test('Empty string', () => {

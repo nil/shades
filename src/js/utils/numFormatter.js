@@ -1,6 +1,6 @@
-const math = require('string-math');
+import math from 'string-math';
 
-module.exports = function (val, maximum = 99999) {
+export default function (val, maximum = 99999) {
   // Turn value into a string
   let number = String(val);
 
@@ -29,4 +29,4 @@ module.exports = function (val, maximum = 99999) {
   }
 
   return false;
-};
+}
