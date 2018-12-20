@@ -22,8 +22,8 @@
 
 <script>
 
-import DragHelper from '../../js/utils/dragHelper';
-import round from '../../js/utils/round';
+import DragHelper from '../../js/dragHelper';
+import round from '../../js/round';
 
 export default {
   components: {
