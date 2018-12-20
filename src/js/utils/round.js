@@ -1,4 +1,4 @@
-export default function (value, min, max, step) {
+module.exports = function (value, min, max, step) {
   if (value <= min) {
     return min;
   }
@@ -21,4 +21,4 @@ export default function (value, min, max, step) {
   }
 
   return step * (decimal + 1) + min;
-}
+};
