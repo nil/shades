@@ -1,4 +1,4 @@
-import round from '../utils/round';
+import round from '../src/js/round';
 
 describe('Round', () => {
   test('Min, max', () => {
