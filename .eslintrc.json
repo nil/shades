@@ -8,6 +8,11 @@
     "plugin:vue/essential",
     "airbnb-base"
   ],
+  "settings": {
+    "import/resolver": {
+      "webpack": "vue.config.js"
+    }
+  },
   "rules": {
     "func-names": 0,
     "prefer-destructuring": 0,
