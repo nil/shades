@@ -42,3 +42,12 @@ var(--c_base--background)
 | Color      | `c`      |
 | Size       | `s`      |
 | Other      | `o`      |
+
+### Aliases for folders and files
+
+| Alias   | Folder or file |
+|---------|----------------|
+| `c`     | `components/`  |
+| `a`     | `assets/`      |
+| `js`    | `src/js/`      |
+| `store` | `src/store.js` |
