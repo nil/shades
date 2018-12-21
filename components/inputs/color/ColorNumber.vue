@@ -10,9 +10,9 @@
       :value="colorValue"
       ref="input"
       @blur="writeUpdate($event)"
-      @keypress.enter="writeUpdate($event)"
-      @keypress.up="arrowUpdate($event)"
-      @keypress.down="arrowUpdate($event)" />
+      @keydown.enter="writeUpdate($event)"
+      @keydown.up="arrowUpdate($event)"
+      @keydown.down="arrowUpdate($event)" />
   </div>
 </template>
 
