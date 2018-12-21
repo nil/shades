@@ -1,5 +1,3 @@
-
-
 const isBrowser = typeof window !== 'undefined';
 const hasPassive = isBrowser && (function () {
   let supported = false;
