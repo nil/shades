@@ -1,4 +1,4 @@
-import numFormatter from '../src/js/numFormatter';
+import numFormatter from '../../src/js/numFormatter';
 
 describe('numFormatter', () => {
   test('Empty string', () => {
