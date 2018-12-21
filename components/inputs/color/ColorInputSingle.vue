@@ -13,7 +13,7 @@
 
 import HexFormat from 'hex-format';
 import color from 'color';
-import store from '../../store';
+import store from 'store';
 
 export default {
   name: 'ColorInputSingle',

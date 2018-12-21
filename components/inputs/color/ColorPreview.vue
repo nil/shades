@@ -4,7 +4,7 @@
 
 <script>
 
-import store from '../../store';
+import store from 'store';
 
 export default {
   name: 'ColorPreview',

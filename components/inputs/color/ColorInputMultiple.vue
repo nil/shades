@@ -12,7 +12,7 @@
 
 <script>
 
-import store from '../../store';
+import store from 'store';
 import ColorNumber from './ColorNumber.vue';
 
 export default {

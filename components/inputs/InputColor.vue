@@ -34,11 +34,11 @@
 <script>
 
 import color from 'color';
-import store from '../../store';
+import store from 'store';
 
-import ColorPreview from '../input-color/ColorPreview.vue';
-import ColorInputSingle from '../input-color/ColorInputSingle.vue';
-import ColorInputMultiple from '../input-color/ColorInputMultiple.vue';
+import ColorPreview from './color/ColorPreview.vue';
+import ColorInputSingle from './color/ColorInputSingle.vue';
+import ColorInputMultiple from './color/ColorInputMultiple.vue';
 
 export default {
   name: 'InputColor',

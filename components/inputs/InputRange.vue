@@ -25,9 +25,9 @@
 
 <script>
 
-import store from '../../store';
-import DragHelper from '../../js/dragHelper';
-import round from '../../js/round';
+import store from 'store';
+import DragHelper from 'js/dragHelper';
+import round from 'js/round';
 
 export default {
   name: 'InputRange',

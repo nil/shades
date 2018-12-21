@@ -17,11 +17,11 @@
 
 <script>
 
-import store from '../../store';
+import store from 'store';
 
-import InputRange from '../components/InputRange.vue';
-import InputColor from '../components/InputColor.vue';
-import InputSwitch from '../components/InputSwitch.vue';
+import InputRange from '../inputs/InputRange.vue';
+import InputColor from '../inputs/InputColor.vue';
+import InputSwitch from '../inputs/InputSwitch.vue';
 
 export default {
   name: 'ConfigBar',

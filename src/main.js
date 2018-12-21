@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import App from './vue/App.vue';
+import App from 'c/App.vue';
 
 import './css/main.pcss';
 import store from './store';

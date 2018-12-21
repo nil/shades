@@ -18,8 +18,8 @@
 
 <script>
 
-import store from '../../store';
-import numFormatter from '../../js/numFormatter';
+import store from 'store';
+import numFormatter from 'js/numFormatter';
 
 let initialMousePosition = 0;
 let initialColorValue = 0;
