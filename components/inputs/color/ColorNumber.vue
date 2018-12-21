@@ -5,7 +5,7 @@
       @mousedown="mouseDownUpdate($event)">
       {{ labelLetter }}
     </label>
-    <input type="number" class="input-color--input"
+    <input type="text" class="input-color--input"
       :id="getId"
       :value="colorValue"
       ref="input"
