@@ -23,7 +23,6 @@
     "autoprefixer": "^9.1.5",
     "babel-core": "^7.0.0-0",
     "babel-jest": "^23.6.0",
-    "babel-plugin-root-import": "^6.1.0",
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.7",
     "eslint-config-airbnb-base": "^13.1.0",
