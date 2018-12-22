@@ -9,7 +9,7 @@
 
     <div class="config-bar--main" :class="{ active: isMainActive }">
       <div class="config-bar--border"></div>
-      <InputRange label="Position" id="main" min="10" max="100" step="10" />
+      <InputRange label="Position" id="main" min="1" max="20" />
       <InputColor label="Color" id="main" />
     </div>
   </section>

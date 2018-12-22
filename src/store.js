@@ -35,7 +35,7 @@ export default new Vuex.Store({
       active: true,
       format: 'hex',
       color: '#778899',
-      index: 30
+      index: 5
     }
   },
 

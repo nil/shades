@@ -40,8 +40,7 @@ export default {
     label: String,
     id: String,
     min: [String, Number],
-    max: [String, Number],
-    step: [String, Number]
+    max: [String, Number]
   },
 
   data() {
@@ -86,10 +85,6 @@ export default {
 
     maxNum() {
       return Number(this.max);
-    },
-
-    stepNum() {
-      return Number(this.step);
     },
 
     valuePercent() {
@@ -150,7 +145,7 @@ export default {
     },
 
     round(value) {
-      return round(value, this.minNum, this.maxNum, this.stepNum);
+      return round(value, this.minNum, this.maxNum, 1);
     }
   }
 };
