@@ -31,6 +31,7 @@ export default {
           value: hex,
           id: this.id
         });
+        this.$refs.input.value = hex;
       } else {
         this.$refs.input.value = this.colorValue;
       }

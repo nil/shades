@@ -42,6 +42,7 @@ export default {
           label: this.label,
           value: val
         });
+        this.$refs.input.value = val;
       } else {
         this.$refs.input.value = this.colorValue;
       }
