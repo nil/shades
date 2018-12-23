@@ -5,7 +5,7 @@ export default function (val, maximum = 99999) {
   let number = String(val);
 
   // See if it contains any of the invalid characters
-  const match = number.match(/([^\d,.+\-*/\u00D7\u00F7()]).*/g);
+  const match = number.match(/([^\d,.+\-*/\u00D7\u00F7]).*/g);
 
   // Turn maximum into a number
   const max = Number(maximum);

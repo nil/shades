@@ -46,7 +46,4 @@ describe('numFormatter', () => {
   test('Complex math operation', () => {
     expect(numFormatter('1+2/2+6*8-20')).toBe(30);
   });
-  test('Parenthesis', () => {
-    expect(numFormatter('(((1+2)*9)+3)/(2+4)')).toBe(5);
-  });
 });
