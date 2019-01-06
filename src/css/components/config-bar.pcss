@@ -18,14 +18,13 @@
     max-height: 0;
     padding-bottom: var(--space_m);
 
+    transition: var(--motion);
     overflow: hidden;
-
-    @add-mixin transition;
 
     &.active {
       max-height: 400px;
 
-      @add-mixin transition-inverse;
+      transition: var(--motion-inverse);
     }
   }
 

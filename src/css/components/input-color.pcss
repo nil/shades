@@ -46,11 +46,17 @@
   }
 
   &--field {
-    @add-mixin input;
-    @add-mixin mono;
     display: flex;
     flex: 1;
+
+    color: var(--c_input--text);
+    background: var(--c_input--bg);
+
+    border: var(--s_input--border) solid var(--c_input--border);
     border-left: 0;
+
+    font-family: var(--t_mono);
+    font-size: 14px;
   }
 
   &--hex {
