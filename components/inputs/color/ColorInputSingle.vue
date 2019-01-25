@@ -17,10 +17,12 @@ import store from 'store';
 
 export default {
   name: 'ColorInputSingle',
+
   props: {
     format: String,
     id: String
   },
+
   methods: {
     writeUpdate(e) {
       const val = e.target.value;
@@ -36,6 +38,7 @@ export default {
         this.$refs.input.value = this.colorValue;
       }
     },
+
     arrowUpdate(e) {
       const diff = 1 + e.shiftKey * 9;
       const hsb = color(this.colorValue).hsv().round().object();
@@ -47,12 +50,13 @@ export default {
         id: this.id
       });
     }
-
   },
+
   computed: {
     colorValue() {
       return store.state[this.id].color;
     },
+
     selectedFormat() {
       return store.state[this.id].format;
     }

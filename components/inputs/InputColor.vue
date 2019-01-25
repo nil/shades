@@ -42,15 +42,18 @@ import ColorInputMultiple from './color/ColorInputMultiple.vue';
 
 export default {
   name: 'InputColor',
+
   components: {
     ColorPreview,
     ColorInputSingle,
     ColorInputMultiple
   },
+
   props: {
     label: String,
     id: String
   },
+
   methods: {
     formatUpdate(newFormat) {
       let newColor = color(store.state[this.id].color)[newFormat]();
@@ -65,11 +68,13 @@ export default {
       });
     }
   },
+
   computed: {
     colorFormat: {
       get() {
         return store.state[this.id].format;
       },
+
       set(value) {
         store.commit('updateFormat', {
           id: this.id,

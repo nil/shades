@@ -99,9 +99,11 @@ export default {
         this.value = this.round(value);
       }
     },
+
     min() {
       this.value = this.round(this.value);
     },
+
     max() {
       this.value = this.round(this.value);
     }

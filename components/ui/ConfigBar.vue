@@ -25,11 +25,13 @@ import InputSwitch from '../inputs/InputSwitch.vue';
 
 export default {
   name: 'ConfigBar',
+
   components: {
     InputRange,
     InputColor,
     InputSwitch
   },
+
   computed: {
     isMainActive() {
       return store.state.main.active;

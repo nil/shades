@@ -17,17 +17,21 @@ import ColorNumber from './ColorNumber.vue';
 
 export default {
   name: 'ColorInputMultiple',
+
   components: {
     ColorNumber
   },
+
   props: {
     format: String,
     id: String
   },
+
   computed: {
     formatObject() {
       return store.state.format[this.format];
     },
+
     selectedFormat() {
       return store.state[this.id].format;
     }

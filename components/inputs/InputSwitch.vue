@@ -26,14 +26,17 @@ import store from 'store';
 
 export default {
   name: 'InputSwitch',
+
   props: {
     label: String,
     id: String
   },
+
   computed: {
     getId() {
       return `input-${Math.floor(Math.random() * 65535).toString(16)}`;
     },
+
     toggleSwitch: {
       get() {
         return store.state[this.id].active;
@@ -43,6 +46,7 @@ export default {
       }
     }
   },
+
   methods: {
     enterToggle(e) {
       e.preventDefault();
