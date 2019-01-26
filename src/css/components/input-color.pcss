@@ -52,23 +52,32 @@
     color: var(--c_input--text);
     background: var(--c_input--bg);
 
-    border: var(--s_input--border) solid var(--c_input--border);
-    border-left: 0;
-
     font-family: var(--t_mono);
     font-size: 14px;
+
+    &:focus {
+      border-color: var(--blue);
+      box-shadow: -1px 0 0 var(--blue);
+    }
   }
 
   &--hex {
     padding: var(--space_xs) var(--space_s);
+
+    border: var(--s_input--border) solid var(--c_input--border);
+    border-left: 0;
   }
 
   &--number {
     display: flex;
     flex: 1;
 
-    &:not(:last-child) {
-      border-right: var(--s_input--border) solid var(--c_input--border);
+    border: var(--s_input--border) solid var(--c_input--border);
+    border-left: 0;
+
+    &:focus-within {
+      border-color: var(--blue);
+      box-shadow: -1px 0 0 var(--blue);
     }
   }
 
