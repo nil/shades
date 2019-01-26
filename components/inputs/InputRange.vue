@@ -46,10 +46,6 @@ export default {
       }
     },
 
-    getId() {
-      return `input-${Math.floor(Math.random() * 65535).toString(16)}`;
-    },
-
     valuePercent() {
       const min = Number(this.min);
       const max = Number(this.max);
