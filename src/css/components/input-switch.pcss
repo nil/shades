@@ -42,6 +42,13 @@
 			z-index: -1;
 		}
 
+		&:before { /* Background */
+			width: 100%;
+			height: var(--space_s);
+
+			background: var(--c_input--fill);
+		}
+
 		&:after { /* Box */
 			right: var(--switch-size);
 
@@ -52,13 +59,6 @@
 			border: var(--s_input--border) solid var(--c_input--border);
 
 			transition: var(--motion), border 0ms;
-		}
-
-		&:before { /* Background */
-			width: 100%;
-			height: var(--space_s);
-
-			background: var(--c_input--fill);
 		}
 	}
 
