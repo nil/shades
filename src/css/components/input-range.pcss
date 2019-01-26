@@ -1,5 +1,10 @@
+/**
+ * Based on https://scottaohara.github.io/a11y_styled_form_controls/src/range-slider/
+ */
+
 :root {
   --handle-size: var(--space_m);
+  --path-height: var(--space_b);
 }
 
 .input-range {
@@ -19,44 +24,66 @@
 
   &--slider {
     position: relative;
-    margin: var(--space_s) 0;
-    height: var(--space_b);
-    background: var(--c_input--fill);
-    cursor: pointer;
   }
 
-  &--hidden {
-    display: none;
+  &--path {
+    position: absolute;
+    top: var(--space_s);
+
+    width: 100%;
+    height: var(--path-height);
+
+    background: var(--gray-30);
+
+    z-index: -1;
   }
 
   &--progress {
-    position: absolute;
-    top: 0;
-    left: 0;
-
     height: 100%;
-
-    background-color: var(--c_input--accent);
+    background: var(--gray-70);
   }
 
-  &--drag {
-    width: calc(100% - var(--handle-size));
-    height: 100%;
-    transform: translateX(calc(var(--handle-size) / 2))
-  }
+  &--input {
+    margin: var(--space_s) 0 0;
+    width: 100%;
+    height: var(--path-height);
 
-  &--handle {
-    position: absolute;
-    top: 50%;
-    left: 0;
+    background: transparent;
 
-    width: var(--handle-size);
-    height: var(--handle-size);
-
-    border: var(--s_input--border) solid var(--c_input--border);
-    background-color: var(--c_input--bg);
-
-    transform: translate(-50%, -50%);
+    -webkit-appearance: none;
+    appearance: none;
     cursor: pointer;
+
+    &::-webkit-slider-runnable-track, /* TODO: -ms styles */
+    &::-moz-range-track {
+      background: transparent;
+    }
+
+    &::-webkit-slider-thumb, /* TODO: -ms styles */
+    &::-moz-range-thumb {
+      width: var(--handle-size);
+      height: var(--handle-size);
+
+      background: var(--c_input--bg);
+      border: var(--s_input--border) solid var(--c_input--border);
+      border-radius: 0;
+
+      box-sizing: border-box;
+      -webkit-appearance: none;
+      appearance: none;
+      cursor: grab;
+    }
+
+    &:focus {
+      &::-webkit-slider-thumb { border-color: var(--blue); }
+      &::-moz-range-thumb { border-color: var(--blue); }
+    }
+
+    &::-webkit-slider-thumb:active { cursor: grabbing; }
+    &::-moz-range-thumb:active { cursor: grabbing; }
+
+    &::-moz-focus-outer {
+      border: 0;
+    }
   }
 }
