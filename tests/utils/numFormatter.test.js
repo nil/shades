@@ -37,6 +37,12 @@ describe('numFormatter', () => {
   test('Greater than maximum value', () => {
     expect(numFormatter('222', '200')).toBe(200);
   });
+  test('Minimum value', () => {
+    expect(numFormatter('10', '50', '10')).toBe(10);
+  });
+  test('Less than minimum value', () => {
+    expect(numFormatter('5', '50', '10')).toBe(10);
+  });
   test('Math operation', () => {
     expect(numFormatter('-1+3')).toBe(2);
   });

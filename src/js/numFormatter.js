@@ -1,6 +1,6 @@
 import math from 'string-math';
 
-export default function (val, maximum = 99999) {
+export default function (val, maximum = 99999, minimum = 0) {
   // Turn value into a string
   let number = String(val);
 
@@ -9,14 +9,15 @@ export default function (val, maximum = 99999) {
 
   // Turn maximum into a number
   const max = Number(maximum);
+  const min = Number(minimum);
 
   if (number.length && !match) {
     // Do math operations
     number = math(number);
 
-    // Smaller than 0 - return 0
-    if (number <= 0) {
-      return 0;
+    // Smaller than minimum - return min
+    if (number <= min) {
+      return min;
     }
 
     // Greater than maximum - return max
