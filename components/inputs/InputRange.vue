@@ -12,7 +12,7 @@
         @keydown.down="arrowUpdate($event)" />
     </div>
     <div class="input-range--slider">
-      <div class="input-range--limit input-range--path">
+      <div class="input-range--path">
         <div class="input-range--progress" :style="{ width: valuePercent }"></div>
       </div>
       <input class="input-range--input"
@@ -21,9 +21,6 @@
         :max="max"
         v-model="value"
       />
-      <div class="input-range--limit">
-        <div class="input-range--tooltip" :style="{ left: valuePercent }">{{ value }}</div>
-      </div>
     </div>
   </div>
 </template>
