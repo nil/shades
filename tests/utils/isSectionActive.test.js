@@ -30,6 +30,6 @@ describe('isSectionActive', () => {
   });
 
   test('Return true if active is undefined', () => {
-    expect(isSectionActive('from')).toBe(true);
+    expect(isSectionActive('from')).toBeTruthy();
   });
 });
