@@ -15,14 +15,20 @@
   z-index: 1;
 
   &--main {
+    padding-bottom: 0;
+    margin-bottom: var(--space_m);
     max-height: 0;
-    padding-bottom: var(--space_m);
+
+    border-bottom: 0 solid var(--c_input--border);
 
     transition: var(--motion);
     overflow: hidden;
 
     &.active {
+      padding-bottom: var(--space_m);
       max-height: 400px;
+
+      border-bottom-width: var(--s_input--border);
 
       transition: var(--motion-inverse);
     }
