@@ -7,7 +7,7 @@
 
     <InputSwitch label="Main color" id="main" />
 
-    <div class="config-bar--main" :class="{ active: isMainActive }">
+    <div class="config-bar--main" :class="{ active: isSectionActive }">
       <div class="config-bar--border"></div>
       <InputRange label="Position" id="main" min="1" max="20" />
       <InputColor label="Color" id="main" />
@@ -17,7 +17,7 @@
 
 <script>
 
-import store from 'store';
+import isSectionActive from 'js/isSectionActive';
 
 import InputRange from '../inputs/InputRange.vue';
 import InputColor from '../inputs/InputColor.vue';
@@ -33,8 +33,8 @@ export default {
   },
 
   computed: {
-    isMainActive() {
-      return store.state.main.active;
+    isSectionActive() {
+      return isSectionActive('main');
     }
   }
 };

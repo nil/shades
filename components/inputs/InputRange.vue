@@ -20,7 +20,7 @@
         :min="min"
         :max="max"
         v-model="value"
-        :disabled="!isInputActive"
+        :disabled="!isSectionActive"
       />
     </div>
   </div>
@@ -28,6 +28,7 @@
 
 <script>
 import store from 'store';
+import isSectionActive from 'js/isSectionActive';
 import validateNumber from 'js/validateNumber';
 
 export default {
@@ -79,14 +80,8 @@ export default {
       }
     },
 
-    isInputActive() {
-      const active = store.state[this.id].active;
-
-      if (active === undefined) {
-        return true;
-      }
-
-      return active;
+    isSectionActive() {
+      return isSectionActive(this.id);
     },
 
     valuePercent() {

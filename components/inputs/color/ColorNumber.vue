@@ -8,7 +8,7 @@
     <input type="text" class="input-color--input"
       :id="getId"
       :value="colorValue"
-      :disabled="!isInputActive"
+      :disabled="!isSectionActive"
       ref="input"
       @blur="writeUpdate($event)"
       @keydown.enter="writeUpdate($event)"
@@ -20,6 +20,7 @@
 <script>
 
 import store from 'store';
+import isSectionActive from 'js/isSectionActive';
 import validateNumber from 'js/validateNumber';
 
 let initialMousePosition = 0;
@@ -95,14 +96,8 @@ export default {
       return store.state[this.id].color[this.label];
     },
 
-    isInputActive() {
-      const active = store.state[this.id].active;
-
-      if (active === undefined) {
-        return true;
-      }
-
-      return active;
+    isSectionActive() {
+      return isSectionActive(this.id);
     }
   }
 };

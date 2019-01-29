@@ -2,7 +2,7 @@
   <input type="text" class="input-color--field input-color--hex"
     v-if="selectedFormat === format"
     :value="colorValue"
-    :disabled="!isInputActive"
+    :disabled="!isSectionActive"
     ref="input"
     @blur="writeUpdate($event)"
     @keydown.enter="writeUpdate($event)"
@@ -15,6 +15,8 @@
 import HexFormat from 'hex-format';
 import color from 'color';
 import store from 'store';
+
+import isSectionActive from 'js/isSectionActive';
 
 export default {
   name: 'ColorInputSingle',
@@ -62,14 +64,8 @@ export default {
       return store.state[this.id].color;
     },
 
-    isInputActive() {
-      const active = store.state[this.id].active;
-
-      if (active === undefined) {
-        return true;
-      }
-
-      return active;
+    isSectionActive() {
+      return isSectionActive(this.id);
     }
   }
 };
