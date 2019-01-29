@@ -1,6 +1,6 @@
 <template>
   <section class="config-bar" role="main">
-    <h1>Colors {{ indexValue }}</h1>
+    <h1>Colors</h1>
 
     <InputColor label="From" id="from" />
     <InputColor label="To" id="to" />
@@ -35,10 +35,6 @@ export default {
   computed: {
     isMainActive() {
       return store.state.main.active;
-    },
-
-    indexValue() {
-      return store.state.main.index;
     }
   }
 };
