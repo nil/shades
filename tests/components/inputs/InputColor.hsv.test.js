@@ -25,25 +25,25 @@ const preview = input.find(ColorPreview);
 
 // Tests
 describe('ColorInput', () => {
-  // describe('formatUpdate', () => {
-  //   // Change format to hsv
-  //   input.find('.input-color--dropdown').setValue('hsv');
-  //   input.find('.input-color--dropdown').trigger('input');
+  describe('formatUpdate', () => {
+    // Change format to hsv
+    input.find('.input-color--dropdown').setValue('hsv');
+    input.find('.input-color--dropdown').trigger('input');
 
-  //   test('Format is updated', () => {
-  //     expect(input.vm.colorFormat).toBe(store.state.from.format);
-  //     expect(input.vm.colorFormat).toBe('hsv');
-  //   });
+    test('Format is updated', () => {
+      expect(input.vm.colorFormat).toBe(store.state.from.format);
+      expect(input.vm.colorFormat).toBe('hsv');
+    });
 
-  //   test('Color is updated', () => {
-  //     expect(store.state.from.color.h.h).not.toBe(undefined);
-  //   });
+    test('Color is updated', () => {
+      expect(store.state.from.color.h).not.toBe(undefined);
+    });
 
-  //   test('Input is replaced', () => {
-  //     expect(input.find('.input-color--hex').exists()).toBeFalsy();
-  //     expect(input.find('.input-color--number').exists()).toBeTruthy();
-  //   });
-  // });
+    test('Input is replaced', () => {
+      expect(input.find('.input-color--hex').exists()).toBeFalsy();
+      expect(input.find('.input-color--number').exists()).toBeTruthy();
+    });
+  });
 
   describe('ColorInputMultiple', () => {
     test('Correct number of inputs', () => {
