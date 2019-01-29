@@ -2,6 +2,7 @@
   <input type="text" class="input-color--field input-color--hex"
     v-if="selectedFormat === format"
     :value="colorValue"
+    :disabled="!isInputActive"
     ref="input"
     @blur="writeUpdate($event)"
     @keydown.enter="writeUpdate($event)"
@@ -53,12 +54,22 @@ export default {
   },
 
   computed: {
+    selectedFormat() {
+      return store.state[this.id].format;
+    },
+
     colorValue() {
       return store.state[this.id].color;
     },
 
-    selectedFormat() {
-      return store.state[this.id].format;
+    isInputActive() {
+      const active = store.state[this.id].active;
+
+      if (active === undefined) {
+        return true;
+      }
+
+      return active;
     }
   }
 };

@@ -20,6 +20,7 @@
         :min="min"
         :max="max"
         v-model="value"
+        :disabled="!isInputActive"
       />
     </div>
   </div>
@@ -76,6 +77,16 @@ export default {
           });
         }
       }
+    },
+
+    isInputActive() {
+      const active = store.state[this.id].active;
+
+      if (active === undefined) {
+        return true;
+      }
+
+      return active;
     },
 
     valuePercent() {

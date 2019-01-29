@@ -8,6 +8,7 @@
     <input type="text" class="input-color--input"
       :id="getId"
       :value="colorValue"
+      :disabled="!isInputActive"
       ref="input"
       @blur="writeUpdate($event)"
       @keydown.enter="writeUpdate($event)"
@@ -77,14 +78,6 @@ export default {
   },
 
   computed: {
-    colorValue() {
-      return store.state[this.id].color[this.label];
-    },
-
-    getId() {
-      return `input-${Math.floor(Math.random() * 65535).toString(16)}`;
-    },
-
     labelLetter() {
       // HSV's most popular name is HSB, so this replaces the V with a B
       if (this.label === 'v') {
@@ -92,6 +85,24 @@ export default {
       }
 
       return this.label.toUpperCase();
+    },
+
+    getId() {
+      return `input-${Math.floor(Math.random() * 65535).toString(16)}`;
+    },
+
+    colorValue() {
+      return store.state[this.id].color[this.label];
+    },
+
+    isInputActive() {
+      const active = store.state[this.id].active;
+
+      if (active === undefined) {
+        return true;
+      }
+
+      return active;
     }
   }
 };
