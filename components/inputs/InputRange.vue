@@ -6,6 +6,7 @@
         ref="input"
         :value="value"
         tabindex="-1"
+        :disabled="!isSectionActive"
         @blur="writeUpdate($event)"
         @keydown.enter="writeUpdate($event)"
         @keydown.up="arrowUpdate($event)"
