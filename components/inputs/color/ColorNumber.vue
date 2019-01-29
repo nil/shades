@@ -20,7 +20,7 @@
 <script>
 
 import store from 'store';
-import numFormatter from 'js/numFormatter';
+import validateNumber from 'js/validateNumber';
 
 let initialMousePosition = 0;
 let initialColorValue = 0;
@@ -37,7 +37,7 @@ export default {
   methods: {
     writeUpdate(e, value) {
       const chosenValue = e ? e.target.value : value;
-      const val = numFormatter(chosenValue, this.max);
+      const val = validateNumber(chosenValue, this.max);
 
       if (val || val === 0) {
         store.commit('updateNumber', {

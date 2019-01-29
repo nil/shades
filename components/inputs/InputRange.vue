@@ -28,7 +28,7 @@
 
 <script>
 import store from 'store';
-import numFormatter from 'js/numFormatter';
+import validateNumber from 'js/validateNumber';
 
 export default {
   name: 'InputRange',
@@ -43,7 +43,7 @@ export default {
   methods: {
     writeUpdate(e, value) {
       const chosenValue = e ? e.target.value : value;
-      const val = numFormatter(chosenValue, this.max, this.min);
+      const val = validateNumber(chosenValue, this.max, this.min);
 
       if (val || val === 0) {
         store.commit('updateRange', {
