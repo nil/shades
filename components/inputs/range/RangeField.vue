@@ -15,7 +15,8 @@
 import store from 'store';
 
 import isSectionActive from 'js/isSectionActive';
-import validateNumber from 'js/validateNumber';
+import updateFieldWithKey from 'js/updateFieldWithKey';
+import updateFieldWithText from 'js/updateFieldWithText';
 
 export default {
   name: 'RangeField',
@@ -28,25 +29,21 @@ export default {
 
   methods: {
     writeUpdate(e, value) {
-      const chosenValue = e ? e.target.value : value;
-      const val = validateNumber(chosenValue, this.max, this.min);
-
-      if (val || val === 0) {
-        store.commit('updateRange', {
-          id: this.id,
-          value: val
-        });
-        this.$refs.input.value = val;
-      } else {
-        this.$refs.input.value = this.value;
-      }
+      this.$refs.input.value = updateFieldWithText({
+        id: this.id,
+        value: e ? e.target.value : value,
+        current: this.colorValue,
+        max: this.max,
+        min: this.min
+      });
     },
 
     arrowUpdate(e) {
-      const diff = 1 + e.shiftKey * 9;
-      const val = this.value + (e.key === 'ArrowDown' ? -diff : diff);
-
-      this.writeUpdate(undefined, val);
+      this.writeUpdate(null, updateFieldWithKey({
+        value: this.value,
+        key: e.key,
+        shift: e.shiftKey
+      }));
     }
   },
 

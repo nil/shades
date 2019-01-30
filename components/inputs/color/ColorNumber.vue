@@ -21,7 +21,8 @@
 
 import store from 'store';
 import isSectionActive from 'js/isSectionActive';
-import validateNumber from 'js/validateNumber';
+import updateFieldWithKey from 'js/updateFieldWithKey';
+import updateFieldWithText from 'js/updateFieldWithText';
 
 let initialMousePosition = 0;
 let initialColorValue = 0;
@@ -37,26 +38,22 @@ export default {
 
   methods: {
     writeUpdate(e, value) {
-      const chosenValue = e ? e.target.value : value;
-      const val = validateNumber(chosenValue, this.max);
-
-      if (val || val === 0) {
-        store.commit('updateNumber', {
-          id: this.id,
-          label: this.label,
-          value: val
-        });
-        this.$refs.input.value = val;
-      } else {
-        this.$refs.input.value = this.colorValue;
-      }
+      this.$refs.input.value = updateFieldWithText({
+        id: this.id,
+        label: this.label,
+        value: e ? e.target.value : value,
+        current: this.colorValue,
+        max: this.max,
+        min: this.min
+      });
     },
 
     arrowUpdate(e) {
-      const diff = 1 + e.shiftKey * 9;
-      const val = this.colorValue + (e.key === 'ArrowDown' ? -diff : diff);
-
-      this.writeUpdate(undefined, val);
+      this.writeUpdate(null, updateFieldWithKey({
+        value: this.colorValue,
+        key: e.key,
+        shift: e.shiftKey
+      }));
     },
 
     mouseDownUpdate(e) {
