@@ -43,7 +43,7 @@ export default new Vuex.Store({
     updateNumber(state, { id, label, value }) {
       state[id].color[label] = value;
     },
-    updateColor(state, { value, id }) {
+    updateColor(state, { id, value }) {
       state[id].color = value;
     },
     updateFormat(state, { id, value }) {
@@ -52,7 +52,7 @@ export default new Vuex.Store({
     updateSwitch(state, id) {
       state[id].active = !state[id].active;
     },
-    updateRange(state, { value, id }) {
+    updateRange(state, { id, value }) {
       state[id].index = value;
     }
   },
