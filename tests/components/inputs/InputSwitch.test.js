@@ -14,7 +14,7 @@ let active = null;
 
 // Tests
 describe('InputSwitch', () => {
-  test('Switch state coincide with store value', () => {
+  test('Switch state coincides with store value', () => {
     active = wrapper.vm.toggleSwitch;
     expect(wrapper.vm.toggleSwitch).toBe(store.state.main.active);
   });
