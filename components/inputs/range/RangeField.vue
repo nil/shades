@@ -31,7 +31,7 @@ export default {
     writeUpdate(e, value) {
       this.$refs.input.value = updateFieldWithText({
         id: this.id,
-        value: e ? e.target.value : value,
+        number: e ? e.target.value : value,
         current: this.colorValue,
         max: this.max,
         min: this.min
@@ -40,7 +40,7 @@ export default {
 
     arrowUpdate(e) {
       this.writeUpdate(null, updateFieldWithKey({
-        value: this.value,
+        number: this.value,
         key: e.key,
         shift: e.shiftKey
       }));

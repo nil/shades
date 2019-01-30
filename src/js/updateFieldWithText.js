@@ -7,7 +7,7 @@ import validateNumber from './validateNumber';
  * @param {Object} obj                - An object containing all parameters.
  * @param {string} obj.id             - The id of the field.
  * @param {string|boolean} obj.label  - The name of the label, if there is one.
- * @param {string|number} obj.value   - The new value.
+ * @param {string|number} obj.number  - The new number value.
  * @param {stirng|number} obj.current - The current value.
  * @param {sting|number} obj.max      - The maximum valid value.
  * @param {sting|number} obj.min      - The minimum valid value.
@@ -15,7 +15,7 @@ import validateNumber from './validateNumber';
  * @returns {number} Returns `obj.value` if its valid, else `obj.current`.
  */
 export default function (obj) {
-  const value = validateNumber(obj.value, obj.max, obj.min);
+  const value = validateNumber(obj.number, obj.max, obj.min);
 
   const label = obj.label;
   const id = obj.id;
