@@ -26,10 +26,6 @@ const preview = input.find(ColorPreview);
 // Tests
 describe('ColorInput', () => {
   describe('formatUpdate', () => {
-    // Change format to hsv
-    input.find('.input-color--dropdown').setValue('hsv');
-    input.find('.input-color--dropdown').trigger('input');
-
     test('Format is updated', () => {
       expect(input.vm.colorFormat).toBe(store.state.from.format);
       expect(input.vm.colorFormat).toBe('hsv');
