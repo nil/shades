@@ -62,51 +62,53 @@ describe('ColorInput', () => {
     });
 
     test('Change value with blur', () => {
-      number.vm.$refs.input.value = '20';
+      number.vm.$refs.input.value = '1520';
       numberInput.trigger('blur');
 
       expect(Number(number.vm.$refs.input.value)).toBe(store.state.from.color.h);
-      expect(store.state.from.color.h).toBe(20);
+      expect(store.state.from.color.h).toBe(360);
     });
 
     test('Change value with enter', () => {
-      number.vm.$refs.input.value = '12+6*4';
+      number.vm.$refs.input.value = '12 + 6 * (-4)';
       numberInput.trigger('keydown.enter');
 
       expect(Number(number.vm.$refs.input.value)).toBe(store.state.from.color.h);
-      expect(store.state.from.color.h).toBe(36);
+      expect(store.state.from.color.h).toBe(0);
     });
 
     test('Change value with key up', () => {
       numberInput.trigger('keydown.up');
 
       expect(Number(number.vm.$refs.input.value)).toBe(store.state.from.color.h);
-      expect(store.state.from.color.h).toBe(37);
+      expect(store.state.from.color.h).toBe(1);
     });
 
     test('Change value with key up and shift', () => {
       numberInput.trigger('keydown.up', { shiftKey: true });
+      numberInput.trigger('keydown.up', { shiftKey: true });
+      numberInput.trigger('keydown.up', { shiftKey: true });
 
       expect(Number(number.vm.$refs.input.value)).toBe(store.state.from.color.h);
-      expect(store.state.from.color.h).toBe(47);
+      expect(store.state.from.color.h).toBe(31);
     });
 
     test('Change value with key down', () => {
       numberInput.trigger('keydown.down', { key: 'ArrowDown' });
 
       expect(Number(number.vm.$refs.input.value)).toBe(store.state.from.color.h);
-      expect(store.state.from.color.h).toBe(46);
+      expect(store.state.from.color.h).toBe(30);
     });
 
     test('Change value with key down and shift', () => {
       numberInput.trigger('keydown.down', { key: 'ArrowDown', shiftKey: true });
 
       expect(Number(number.vm.$refs.input.value)).toBe(store.state.from.color.h);
-      expect(store.state.from.color.h).toBe(36);
+      expect(store.state.from.color.h).toBe(20);
     });
   });
 
   test('Color preview is updated', () => {
-    expect(preview.vm.backgroundColor).toBe('#332511');
+    expect(preview.vm.backgroundColor).toBe('#331C11');
   });
 });
