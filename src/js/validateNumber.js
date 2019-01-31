@@ -12,7 +12,7 @@ import math from 'string-math';
 export default function (val, maximum = 99999, minimum = 0) {
   let number = String(val);
 
-  const match = number.match(/([^\d,.+\-*/\u00D7\u00F7()]).*/g);
+  const match = number.match(/([^\s\d,.+\-*/\u00D7\u00F7()]).*/g);
   const max = Number(maximum);
   const min = Number(minimum);
 
