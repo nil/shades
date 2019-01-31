@@ -3,6 +3,20 @@ import HexFormat from 'hex-format';
 import validateNumber from './validateNumber';
 
 /**
+ * Check if a variable is valid
+ *
+ * @param param - The variable to check.
+ *
+ * @returns {boolean} Returns `true` if its valid, else `false`.
+ */
+function isValid(param) {
+  if (param || param === 0) {
+    return true;
+  }
+  return false;
+}
+
+/**
  * Update the value of the field and update the store value.
  *
  * @param {Object} obj                - An object containing all parameters.
@@ -19,16 +33,16 @@ import validateNumber from './validateNumber';
 export default function (obj) {
   let value;
 
-  if (obj.color) {
+  if (isValid(obj.color)) {
     value = new HexFormat().format(obj.color);
-  } else if (obj.number) {
+  } else if (isValid(obj.number)) {
     value = validateNumber(obj.number, obj.max, obj.min);
   }
 
   const label = obj.label;
   const id = obj.id;
 
-  if (value || value === 0) {
+  if (isValid(value)) {
     if (obj.color) {
       store.commit('updateColor', { id, value });
     } else if (obj.label) {
