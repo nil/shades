@@ -36,6 +36,14 @@ export default {
       }
     },
 
+    min() {
+      return store.state[this.id].range.min;
+    },
+
+    max() {
+      return store.state[this.id].range.max;
+    },
+
     isSectionActive() {
       return isSectionActive(this.id);
     }
