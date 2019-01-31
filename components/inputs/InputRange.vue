@@ -2,13 +2,13 @@
   <div class="input-range">
     <div class="input-range--info">
       <div class="input-range--name">{{ label }}</div>
-      <RangeField :id="id" />
+      <RangeField :id="id" :min="min" :max="max" />
     </div>
     <div class="input-range--slider">
       <div class="input-range--path">
         <div class="input-range--progress" :style="{ width: valuePercent }"></div>
       </div>
-      <RangeSlider :id="id" />
+      <RangeSlider :id="id" :min="min" :max="max" />
     </div>
   </div>
 </template>
@@ -29,16 +29,16 @@ export default {
 
   props: {
     label: String,
-    id: String
+    id: String,
+    min: [String, Number],
+    max: [String, Number]
   },
 
   computed: {
     valuePercent() {
-      const range = store.state[this.id].range;
-
-      const val = range.value;
-      const min = range.min;
-      const max = range.max;
+      const val = store.state[this.id].index;
+      const min = Number(this.min);
+      const max = Number(this.max);
 
       return `${(val - min) / (max - min) * 100}%`;
     }

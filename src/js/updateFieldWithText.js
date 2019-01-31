@@ -11,20 +11,22 @@ import validateNumber from './validateNumber';
  * @param {string} obj.color          - The new color value.
  * @param {string|number} obj.number  - The new number value.
  * @param {stirng|number} obj.current - The current value.
+ * @param {sting|number} obj.max      - The maximum valid value.
+ * @param {sting|number} obj.min      - The minimum valid value.
  *
  * @returns {number} Returns `obj.value` if its valid, else `obj.current`.
  */
 export default function (obj) {
   let value;
 
-  const label = obj.label;
-  const id = obj.id;
-
   if (obj.color) {
     value = new HexFormat().format(obj.color);
   } else if (obj.number) {
-    value = validateNumber(obj.number, store.state[id].range);
+    value = validateNumber(obj.number, obj.max, obj.min);
   }
+
+  const label = obj.label;
+  const id = obj.id;
 
   if (value || value === 0) {
     if (obj.color) {
