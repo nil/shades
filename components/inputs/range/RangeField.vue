@@ -22,9 +22,7 @@ export default {
   name: 'RangeField',
 
   props: {
-    id: String,
-    min: [String, Number],
-    max: [String, Number]
+    id: String
   },
 
   methods: {
@@ -32,9 +30,7 @@ export default {
       this.$refs.input.value = updateFieldWithText({
         id: this.id,
         number: e ? e.target.value : value,
-        current: this.colorValue,
-        max: this.max,
-        min: this.min
+        current: this.colorValue
       });
     },
 
@@ -50,7 +46,7 @@ export default {
   computed: {
     value: {
       get() {
-        return store.state[this.id].index;
+        return store.state[this.id].range.value;
       },
       set(value) {
         if (value !== this.value) {

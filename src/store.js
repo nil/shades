@@ -35,7 +35,11 @@ export default new Vuex.Store({
       active: true,
       format: 'hex',
       color: '#778899',
-      index: 5
+      range: {
+        min: 1,
+        max: 20,
+        value: 5
+      }
     }
   },
 
@@ -53,7 +57,7 @@ export default new Vuex.Store({
       state[id].active = !state[id].active;
     },
     updateRange(state, { id, value }) {
-      state[id].index = value;
+      state[id].range.value = value;
     }
   },
 

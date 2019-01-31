@@ -1,5 +1,14 @@
 import validateNumber from 'js/validateNumber';
 
+const max = {
+  max: 200
+};
+
+const min = {
+  min: 10,
+  max: 50
+};
+
 describe('validateNumber', () => {
   test('Empty string', () => {
     expect(validateNumber('')).toBeFalsy();
@@ -32,16 +41,16 @@ describe('validateNumber', () => {
     expect(validateNumber('12a')).toBeFalsy();
   });
   test('Maximum value', () => {
-    expect(validateNumber('200', '200')).toBe(200);
+    expect(validateNumber('200', max)).toBe(200);
   });
   test('Greater than maximum value', () => {
-    expect(validateNumber('222', '200')).toBe(200);
+    expect(validateNumber('222', max)).toBe(200);
   });
   test('Minimum value', () => {
-    expect(validateNumber('10', '50', '10')).toBe(10);
+    expect(validateNumber('10', min)).toBe(10);
   });
   test('Less than minimum value', () => {
-    expect(validateNumber('5', '50', '10')).toBe(10);
+    expect(validateNumber('5', min)).toBe(10);
   });
   test('Math operation', () => {
     expect(validateNumber('-1+3')).toBe(2);
@@ -52,7 +61,7 @@ describe('validateNumber', () => {
   test('Complex math operation', () => {
     expect(validateNumber('1+2/2+6*8-20')).toBe(30);
   });
-  test('Parenthesis', () => {
-    expect(validateNumber('(((1+2)*9)+3)/(2+4)')).toBe(5);
+  test('Parenthesis with maximum value', () => {
+    expect(validateNumber('(((1+2)*9)+3)/(2+4)*100', max)).toBe(200);
   });
 });

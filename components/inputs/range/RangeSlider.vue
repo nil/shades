@@ -18,15 +18,13 @@ export default {
   name: 'RangeField',
 
   props: {
-    id: String,
-    min: [String, Number],
-    max: [String, Number]
+    id: String
   },
 
   computed: {
     value: {
       get() {
-        return store.state[this.id].index;
+        return store.state[this.id].range.value;
       },
       set(value) {
         if (value !== this.value) {

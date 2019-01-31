@@ -42,9 +42,7 @@ export default {
         id: this.id,
         label: this.label,
         number: e ? e.target.value : value,
-        current: this.colorValue,
-        max: this.max,
-        min: this.min
+        current: this.colorValue
       });
     },
 
