@@ -9,8 +9,8 @@ import ColorPreview from 'c/inputs/color/ColorPreview.vue';
 // Mount components
 const input = mount(InputColor, {
   propsData: {
-    label: 'From',
-    id: 'from'
+    label: 'Test',
+    id: 'test'
   }
 });
 
@@ -27,12 +27,12 @@ const preview = input.find(ColorPreview);
 describe('ColorInput', () => {
   describe('formatUpdate', () => {
     test('Format is updated', () => {
-      expect(input.vm.colorFormat).toBe(store.state.from.format);
+      expect(input.vm.colorFormat).toBe(store.state.test.format);
       expect(input.vm.colorFormat).toBe('hsv');
     });
 
     test('Color is updated', () => {
-      expect(store.state.from.color.h).not.toBe(undefined);
+      expect(store.state.test.color.h).not.toBe(undefined);
     });
 
     test('Input is replaced', () => {
@@ -65,23 +65,23 @@ describe('ColorInput', () => {
       number.vm.$refs.input.value = '1520';
       numberInput.trigger('blur');
 
-      expect(Number(number.vm.$refs.input.value)).toBe(store.state.from.color.h);
-      expect(store.state.from.color.h).toBe(360);
+      expect(Number(number.vm.$refs.input.value)).toBe(store.state.test.color.h);
+      expect(store.state.test.color.h).toBe(360);
     });
 
     test('Change value with enter', () => {
       number.vm.$refs.input.value = '12 + 6 * (-4)';
       numberInput.trigger('keydown.enter');
 
-      expect(Number(number.vm.$refs.input.value)).toBe(store.state.from.color.h);
-      expect(store.state.from.color.h).toBe(0);
+      expect(Number(number.vm.$refs.input.value)).toBe(store.state.test.color.h);
+      expect(store.state.test.color.h).toBe(0);
     });
 
     test('Change value with key up', () => {
       numberInput.trigger('keydown.up');
 
-      expect(Number(number.vm.$refs.input.value)).toBe(store.state.from.color.h);
-      expect(store.state.from.color.h).toBe(1);
+      expect(Number(number.vm.$refs.input.value)).toBe(store.state.test.color.h);
+      expect(store.state.test.color.h).toBe(1);
     });
 
     test('Change value with key up and shift', () => {
@@ -89,22 +89,22 @@ describe('ColorInput', () => {
       numberInput.trigger('keydown.up', { shiftKey: true });
       numberInput.trigger('keydown.up', { shiftKey: true });
 
-      expect(Number(number.vm.$refs.input.value)).toBe(store.state.from.color.h);
-      expect(store.state.from.color.h).toBe(31);
+      expect(Number(number.vm.$refs.input.value)).toBe(store.state.test.color.h);
+      expect(store.state.test.color.h).toBe(31);
     });
 
     test('Change value with key down', () => {
       numberInput.trigger('keydown.down', { key: 'ArrowDown' });
 
-      expect(Number(number.vm.$refs.input.value)).toBe(store.state.from.color.h);
-      expect(store.state.from.color.h).toBe(30);
+      expect(Number(number.vm.$refs.input.value)).toBe(store.state.test.color.h);
+      expect(store.state.test.color.h).toBe(30);
     });
 
     test('Change value with key down and shift', () => {
       numberInput.trigger('keydown.down', { key: 'ArrowDown', shiftKey: true });
 
-      expect(Number(number.vm.$refs.input.value)).toBe(store.state.from.color.h);
-      expect(store.state.from.color.h).toBe(20);
+      expect(Number(number.vm.$refs.input.value)).toBe(store.state.test.color.h);
+      expect(store.state.test.color.h).toBe(20);
     });
   });
 

@@ -36,6 +36,14 @@ export default new Vuex.Store({
       format: 'hex',
       color: '#778899',
       index: 5
+    },
+
+    // Data used on tests
+    test: {
+      active: true,
+      format: 'hex',
+      color: '#112233',
+      index: 6
     }
   },
 

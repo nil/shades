@@ -5,8 +5,8 @@ import InputSwitch from 'c/inputs/InputSwitch.vue';
 // Mount component
 const wrapper = mount(InputSwitch, {
   propsData: {
-    label: 'bar',
-    id: 'main'
+    label: 'Test',
+    id: 'test'
   }
 });
 
@@ -16,7 +16,7 @@ let active = null;
 describe('InputSwitch', () => {
   test('Switch state coincides with store value', () => {
     active = wrapper.vm.toggleSwitch;
-    expect(wrapper.vm.toggleSwitch).toBe(store.state.main.active);
+    expect(wrapper.vm.toggleSwitch).toBe(store.state.test.active);
   });
 
   test('Label and checkbox have same name', () => {
@@ -30,7 +30,7 @@ describe('InputSwitch', () => {
     // Toggle switch to change state
     wrapper.find('.input-switch--checkbox').trigger('click');
 
-    expect(wrapper.vm.toggleSwitch).toBe(store.state.main.active);
+    expect(wrapper.vm.toggleSwitch).toBe(store.state.test.active);
     expect(wrapper.vm.toggleSwitch).not.toBe(active);
   });
 
@@ -38,7 +38,7 @@ describe('InputSwitch', () => {
     // Toggle switch to get back to original value
     wrapper.find('.input-switch').trigger('click');
 
-    expect(wrapper.vm.toggleSwitch).toBe(store.state.main.active);
+    expect(wrapper.vm.toggleSwitch).toBe(store.state.test.active);
     expect(wrapper.vm.toggleSwitch).toBe(active);
   });
 });
