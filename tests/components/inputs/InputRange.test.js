@@ -39,6 +39,10 @@ describe('InputRange', () => {
     expect(sliderVal).toBe(storeVal);
   });
 
+  test('ValuePercent is the expected percentage', () => {
+    expect(`${input.vm.valuePercent.substring(0, 7)}%`).toBe('21.0526%');
+  });
+
   describe('RangeField', () => {
     test('Change value with blur', () => {
       field.vm.$refs.input.value = '-2';
