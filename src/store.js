@@ -32,7 +32,7 @@ export default new Vuex.Store({
     },
 
     main: {
-      active: true,
+      active: false,
       format: 'hex',
       color: '#778899',
       index: 5
