@@ -18,6 +18,12 @@ const input = mount(InputRange, {
 const field = input.find(RangeField);
 const slider = input.find(RangeSlider);
 
+// Change default value
+store.commit('updateRange', {
+  id: 'main',
+  value: 6
+});
+
 // Tests
 describe('InputRange', () => {
   test('Two inputs are rendered', () => {
@@ -42,7 +48,7 @@ describe('InputRange', () => {
   });
 
   test('ValuePercent is the expected percentage', () => {
-    expect(`${input.vm.valuePercent.substring(0, 7)}%`).toBe('21.0526%');
+    expect(`${input.vm.valuePercent.substring(0, 7)}%`).toBe('20.8333%');
   });
 
   describe('RangeField', () => {
