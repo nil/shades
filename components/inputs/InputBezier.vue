@@ -1,6 +1,7 @@
 <template>
   <div class="input-bezier">
     <div class="input-bezier--preview">preview</div>
+
     <div class="input-bezier--easing">
       <BezierButton
         v-for="value in bezierEasings"
@@ -9,6 +10,7 @@
         :value="value"
         type="easing" />
     </div>
+
     <div class="input-bezier--power">
       <BezierButton
         v-for="value in bezierPowers"
@@ -17,6 +19,8 @@
         :value="value"
         type="power" />
     </div>
+
+    <BezierField :id="id" />
   </div>
 </template>
 
@@ -25,12 +29,14 @@
 import store from 'store';
 
 import BezierButton from './bezier/BezierButton.vue';
+import BezierField from './bezier/BezierField.vue';
 
 export default {
   name: 'InputBezier',
 
   components: {
-    BezierButton
+    BezierButton,
+    BezierField
   },
 
   props: {
