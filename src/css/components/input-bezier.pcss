@@ -12,7 +12,7 @@
     & .input-bezier--button:not(.input-bezier--linear):not(:last-child) {
       border-bottom-width: 0;
 
-      &:focus,
+      &:focus:not(:disabled),
       &:active {
         box-shadow: 0 1px 0 var(--blue);
         z-index: 1;
@@ -30,7 +30,7 @@
       &:nth-child(-n + 4) {
         border-bottom-width: 0;
 
-        &:focus,
+        &:focus:not(:disabled),
         &:active:not(:disabled) {
           box-shadow: 0 1px 0 var(--blue);
           z-index: 1;
@@ -40,7 +40,7 @@
       &:not(:nth-child(4n)) {
         border-right-width: 0;
 
-        &:focus,
+        &:focus:not(:disabled),
         &:active:not(:disabled) {
           box-shadow: 1px 0 0 var(--blue);
           z-index: 1;
@@ -48,7 +48,7 @@
       }
 
       &:nth-child(-n + 3) {
-        &:focus,
+        &:focus:not(:disabled),
         &:active:not(:disabled) {
           box-shadow: 1px 0 0 var(--blue),
                       0 1px 0 var(--blue),
@@ -70,6 +70,7 @@
 
     font-size: inherit;
 
+    transition: var(--motion), box-shadow 0s, border 0s;
     cursor: pointer;
 
     &.active {
@@ -77,8 +78,8 @@
       background: var(--gray-30);
     }
 
-    &:focus,
-    &:active {
+    &:focus:not(:disabled),
+    &:active:not(:disabled) {
       border-color: var(--blue);
     }
 
@@ -87,9 +88,7 @@
     }
 
     &:disabled {
-      color: var(--gray-60);
-      border-color: var(--gray-20);
-
+      opacity: 0.5;
       cursor: not-allowed;
     }
   }
