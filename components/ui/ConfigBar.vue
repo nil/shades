@@ -12,6 +12,8 @@
       <InputRange label="Position" id="main" min="1" max="20" />
       <InputColor label="Color" id="main" />
     </div>
+
+    <InputBezier id="hue" />
   </section>
 </template>
 
@@ -19,6 +21,7 @@
 
 import isSectionActive from 'js/isSectionActive';
 
+import InputBezier from '../inputs/InputBezier.vue';
 import InputRange from '../inputs/InputRange.vue';
 import InputColor from '../inputs/InputColor.vue';
 import InputSwitch from '../inputs/InputSwitch.vue';
@@ -27,6 +30,7 @@ export default {
   name: 'ConfigBar',
 
   components: {
+    InputBezier,
     InputRange,
     InputColor,
     InputSwitch

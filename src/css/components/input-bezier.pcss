@@ -1,0 +1,78 @@
+:root {
+  --bezier-margin: var(--space_b);
+}
+
+.input-bezier {
+  padding: var(--s_input--margin);
+
+  &--easing {
+    display: flex;
+    flex-direction: column;
+
+    & .input-bezier--button:not(.input-bezier--linear):not(:last-child) {
+      border-bottom-width: 0;
+
+      &:focus {
+        box-shadow: 0 1px 0 var(--blue);
+        z-index: 1;
+      }
+    }
+  }
+
+  &--power {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: var(--bezier-margin);
+
+    & .input-bezier--button {
+      &:nth-child(-n + 4) {
+        border-bottom-width: 0;
+      }
+
+      &:not(:nth-child(4n)) {
+        border-right-width: 0;
+      }
+    }
+  }
+
+  &--button {
+    flex: 1;
+    padding: var(--space_xs) 0;
+    min-width: 25%;
+
+    color: var(--gray-90);
+    background: var(--c_input--bg);
+    border: var(--s_input--border) solid var(--c_input--border);
+
+    font-size: inherit;
+
+    cursor: pointer;
+
+    &.active {
+      color: var(--black);
+      background: var(--gray-30);
+    }
+
+    &:focus {
+      border-color: var(--blue);
+    }
+
+    &::-moz-focus-inner {
+      border: 0;
+    }
+
+    &:disabled {
+      color: var(--gray-60);
+      border-color: var(--gray-20);
+
+      cursor: not-allowed;
+    }
+  }
+
+  &--linear {
+    margin-bottom: var(--bezier-margin);
+  }
+
+
+}
