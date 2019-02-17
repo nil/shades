@@ -101,7 +101,6 @@ export default new Vuex.Store({
       custom: false,
       linear: false,
       easing: 'easeInOut',
-      previousEasing: 'easeInOut',
       power: 'cubic'
     },
 
